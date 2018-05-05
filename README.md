@@ -2,7 +2,7 @@
 
 View our project: (Heroku URL)
 
-Team Members:
+## Team Members:
 * Kurtis Carpenter
 * George Greene
 * Elena Guedes
@@ -12,10 +12,10 @@ Team Members:
 * Jesse Springer
 
 
-Project Overview:
+## Project Overview:
 ...
 
-Minimum Project Requirements:
+### Minimum Project Requirements:
 - Must use React, Vue or Angular in some way
 - Must use a Node and Express Web Server
 - Must be backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM
@@ -29,7 +29,7 @@ Minimum Project Requirements:
 - Must not expose sensitive API key information on the server
 
 
-Technologies Used:
+### Technologies Used:
 - HTML
 - CSS
 - JavaScript
