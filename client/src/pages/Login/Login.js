@@ -12,7 +12,13 @@ class Login extends Component {
     return (
       <div>
         <NavBar />
-        <h1>This is the Login Page</h1>
+        <div class="jumbotron">
+          <h1>Welcome to Grasshopper</h1>
+          <h2>Let us teach you our ways</h2>
+
+          <div class="button btn btn-primary" id="signIn">Sign In</div>
+          <div class="button btn btn-danger" id="logout">Logout</div>
+        </div>
       </div>
     );
   }

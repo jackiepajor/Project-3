@@ -1,0 +1,12 @@
+#nav {
+    background-color: transparent!important;
+    margin-top: 10px;
+}
+
+li {
+   margin-left:20px;
+}
+
+#dropdown {
+    border: none;
+}
