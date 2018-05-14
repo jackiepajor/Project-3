@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import CourseOverview from "./pages/CourseOverview";
 import ManageCourse from "./pages/ManageCourse";
 import MyCourses from "./pages/MyCourses";
-
 import NoMatch from "./pages/NoMatch";
 
 const App = () => (
