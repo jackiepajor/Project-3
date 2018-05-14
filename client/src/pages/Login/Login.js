@@ -11,7 +11,18 @@ class Login extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <h1>This is the Login Page</h1>
+=======
+        <NavBar />
+        <div class="jumbotron">
+          <h1>Welcome to Grasshopper</h1>
+          <h2>Let us teach you our ways</h2>
+
+          <div class="button btn btn-primary" id="signIn">Sign In</div>
+          <div class="button btn btn-danger" id="logout">Logout</div>
+        </div>
+>>>>>>> fa6a233c98306cab2e7d5489df6529c9d7868b1b
       </div>
     );
   }
