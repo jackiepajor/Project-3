@@ -6,6 +6,7 @@ import CourseOverview from "./pages/CourseOverview";
 import ManageCourse from "./pages/ManageCourse";
 import MyCourses from "./pages/MyCourses";
 import NoMatch from "./pages/NoMatch";
+import NavBar from "./components/NavBar"
 
 const App = () => (
   <Router>
