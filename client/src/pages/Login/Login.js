@@ -11,7 +11,6 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <h1>This is the Login Page</h1>
       </div>
     );
