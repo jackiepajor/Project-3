@@ -1,3 +1,4 @@
+
 var mongoose = require("mongoose");
 
 // reference to the Schema constructor
@@ -7,39 +8,19 @@ var Schema = mongoose.Schema;
 var CourseSchema = new Schema({
 
     title: {
+        type: String
         
     },
 
     topic: {
-
+        type: String
+        
     },
 
     synopsis: {
-
+        type: String
+        
     },
-
-    unit: [{
-        title: {
-
-        },
-        synopsis: {
-
-        },
-        lessons: [{
-            title: {
-
-            },
-            image: {
-
-            },
-            video: {
-
-            },
-            body: {
-
-            }
-        }],
-    }],
 
 
 
