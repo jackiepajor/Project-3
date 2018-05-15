@@ -11,7 +11,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <div class="jumbotron">
           <h1>Welcome to Grasshopper</h1>
           <h2>Let us teach you our ways</h2>
