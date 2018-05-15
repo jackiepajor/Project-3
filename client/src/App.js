@@ -5,9 +5,8 @@ import Login from "./pages/Login";
 import CourseOverview from "./pages/CourseOverview";
 import ManageCourse from "./pages/ManageCourse";
 import MyCourses from "./pages/MyCourses";
-import NavBar from "./components/NavBar";
-
 import NoMatch from "./pages/NoMatch";
+import NavBar from "./components/NavBar"
 
 const App = () => (
   <Router>
