@@ -18,11 +18,11 @@ class Login extends Component {
           <form>
             <label>
               Username:
-    <input type="text" name="emailName" id="emailInput" />
+    <input type="text" name="emailName" id="emailInput" placeholder="enter your username"/>
             </label>
             <label>
               Password:
-              <input type="text" name="passwordName" id="passwordInput" />
+              <input type="password" name="passwordName" id="passwordInput" placeholder="enter your password"  />
             </label>
           </form>
           <div class="button btn btn-primary" id="signIn">Sign In</div>

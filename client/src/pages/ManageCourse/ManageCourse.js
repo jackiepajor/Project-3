@@ -13,25 +13,24 @@ class ManageCourse extends Component {
       <div>
         <NavBar />
         <div class="jumbotron">
-        <h1>Course Manager</h1>
-        <h3>In this section, you are able to add, modify, and delete courses</h3>
+          <h1>Course Manager</h1>
+          <h3>In this section, you are able to add, modify, and delete courses</h3>
         </div>
-     
+
         <Container>
-                <Row>
-                  <Col size="lg-4">
-                    <h2>Create</h2>
-                  </Col>
-                  <Col size="lg-4">
-                  <h2>Modify</h2>
-                  </Col>
-                  <Col size="lg-4">
-                  <h2>Delete</h2>
-                  </Col>
-                </Row>
-        
-              </Container>
-       
+          <Row>
+            <Col size="lg-4">
+              <h2>Create</h2>
+            </Col>
+            <Col size="lg-4">
+              <h2>Modify</h2>
+            </Col>
+            <Col size="lg-4">
+              <h2>Delete</h2>
+            </Col>
+          </Row>
+        </Container>
+
       </div>
     );
   }
