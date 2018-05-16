@@ -11,7 +11,6 @@ class CourseOverview extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <h1>This is the course overview page. This is where we should see the particular course and it's sections at a high level.</h1>
       </div>
     );
