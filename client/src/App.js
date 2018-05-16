@@ -10,15 +10,14 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import CourseCreatorInterface from "./components/CourseCreatorInterface";
 import CourseCreator from "./pages/CourseCreator";
-
 import OurTeam from "./pages/OurTeam";
 import NoMatch from "./pages/NoMatch";
-import NavBar from "./components/NavBar"
 
 
 const App = () => (
   <Router>
     <div>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
