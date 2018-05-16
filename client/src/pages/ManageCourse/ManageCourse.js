@@ -11,7 +11,6 @@ class ManageCourse extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <h1>This is the screen that allows a teacher to add, remove, or modify sections of a course.</h1>
       </div>
     );
