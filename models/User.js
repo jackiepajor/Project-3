@@ -13,12 +13,19 @@ var UserSchema = new Schema({
         required: true
     }
 
-    // `email` must be of type String
-  // `email` must be unique
-  // `email` must match the regex pattern below and throws a custom error message if it does not
-  // You can read more about RegEx Patterns here https://www.regexbuddy.com/regex.html
-
-    // email: {
+    // name: {
+    //     type: String
+    //   },
+    
+    //   managedCourses: {
+    //     type: String
+    //   },
+    
+    //   enrolledCourses: {
+    //     type: String
+    //   },
+    
+    //   email: {
     //     type: String,
     //     unique: true,
     //     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
@@ -31,12 +38,7 @@ var UserSchema = new Schema({
     //       message: 'Email already exists!'
     //     }
     //   },
-
-    // `password` must be of type String
-  // `password` will trim leading and trailing whitespace before it's saved
-  // `password` is a required field and throws a custom error message if not supplied
-  // `password` uses a custom validation function to only accept values 6 characters or more
-
+    
     //   password: {
     //     type: String,
     //     trim: true,
@@ -47,14 +49,13 @@ var UserSchema = new Schema({
     //       },
     //       "Password should be longer."
     //     ]
-    //   }
-
-    //   // `date` must be of type Date. The default value is the current date
-//   userCreated: {
-//     type: Date,
-//     default: Date.now
-//   }
-// });
+    //   },
+    
+    
+    //   courses: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Course"
+    //   }]
 
 });
 
