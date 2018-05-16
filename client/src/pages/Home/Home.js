@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../../components/Grid";
+import "./Home.css";
 
 class Home extends Component {
   state = {
@@ -11,15 +12,9 @@ class Home extends Component {
 
   render() {
     return (
-      <Container>
-
-        <Row>
-          <Col size="col-12">
-            <h2>Hello World!</h2>
-          </Col>
-        </Row>
-
-      </Container>
+      <div className="jumbotron jumbotron-fluid" id="main-jumbo">
+      
+      </div>
     );
   }
 }

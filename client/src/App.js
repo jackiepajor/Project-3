@@ -5,7 +5,10 @@ import Login from "./pages/Login";
 import CourseOverview from "./pages/CourseOverview";
 import ManageCourse from "./pages/ManageCourse";
 import MyCourses from "./pages/MyCourses";
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import CourseCreatorInterface from "./components/CourseCreatorInterface";
+import CourseCreator from "./pages/CourseCreator";
 
 import NoMatch from "./pages/NoMatch";
 
@@ -18,10 +21,12 @@ const App = () => (
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/course-overview" component={CourseOverview} />
+          <Route exact path="/course-creator" component={CourseCreator} />
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
     </div>
   </Router>
 );
