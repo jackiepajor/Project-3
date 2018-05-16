@@ -28,15 +28,8 @@ var UserSchema = new Schema({
     //   email: {
     //     type: String,
     //     unique: true,
-    //     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-    //     validate: {
-    //       validator: function(v, cb) {
-    //         User.find({email: v}, function(err,docs){
-    //            cb(docs.length == 0);
-    //         });
-    //       },
-    //       message: 'Email already exists!'
-    //     }
+    //     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+
     //   },
     
     //   password: {
