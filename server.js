@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -25,8 +24,8 @@ app.use(express.static("client/build"));
 
 app.use(logger("dev"));
 
-var book = require("./routes/book");
-var auth = require("./routes/auth");
+const book = require("./routes/book");
+const auth = require("./routes/auth");
 
 app.use('/api/book', book);
 app.use('/api/auth', auth);
