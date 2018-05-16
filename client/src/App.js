@@ -6,8 +6,10 @@ import Register from "./pages/Register";
 import CourseOverview from "./pages/CourseOverview";
 import ManageCourse from "./pages/ManageCourse";
 import MyCourses from "./pages/MyCourses";
+import OurTeam from "./pages/OurTeam";
 import NoMatch from "./pages/NoMatch";
 import NavBar from "./components/NavBar"
+
 
 const App = () => (
   <Router>
@@ -20,6 +22,7 @@ const App = () => (
           <Route exact path="/course-overview" component={CourseOverview} />
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
+          <Route exact path="/our-team" component={OurTeam} />
           <Route component={NoMatch} />
         </Switch>
     </div>
