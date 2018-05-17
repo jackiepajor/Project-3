@@ -11,7 +11,6 @@ class MyCourses extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <h1>This is the screen that allows us to add, remove, or modify all courses, if a teacher. Otherwise, students will be able to view all of their enrolled courses here at a high level.</h1>
         <h2>My courses</h2>
         <ul>
