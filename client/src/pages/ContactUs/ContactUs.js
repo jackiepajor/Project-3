@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
 import { Container, Row, Col } from "../../components/Grid";
 
-class CourseOverview extends Component {
+class ContactUs extends Component {
   state = {
 
   };
@@ -11,10 +11,10 @@ class CourseOverview extends Component {
   render() {
     return (
       <div>
-        <h1>This is the course overview page. This is where we should see the particular course and it's sections at a high level.</h1>
+        <h1>This is our contact page.</h1>
       </div>
     );
   }
 }
 
-export default CourseOverview;
+export default ContactUs;

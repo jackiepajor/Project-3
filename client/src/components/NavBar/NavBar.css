@@ -1,0 +1,47 @@
+#ul {
+    font-weight: bold;
+  }
+
+#nav {
+    background-color: transparent!important;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 5;
+}
+
+.btn-nav {
+  border-radius: 25px;
+  height: 50px;
+  background-color: #4bc361ef;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  padding: 0px 15px 0px 15px;
+}
+
+.btn-nav:hover {
+  color:rgba(255, 255, 255, 0.959);
+  background-color: #4bc361d0;
+
+}
+
+#logo {
+  width: 240px;
+}
+
+.nav-item {
+  border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid #4bc362;
+}
+
+li {
+   margin-left:20px;
+}
+
+#dropdown {
+    border: none;
+}
