@@ -1,25 +1,147 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
 import { Container, Row, Col } from "../../components/Grid";
+import "./MyCourse.css";
 
 class MyCourses extends Component {
   state = {
 
   };
 
-  // the "html" (jsx) for the page goes within the render method's return statement, inside the parenthesis
+ 
   render() {
     return (
       <div>
-        <h1>This is the screen that allows us to add, remove, or modify all courses, if a teacher. Otherwise, students will be able to view all of their enrolled courses here at a high level.</h1>
-        <h2>My courses</h2>
-        <ul>
-          <li>Course one</li>
-          <li>Course two</li>
-          <li>Course three</li>
-        </ul>
-        <button id="createCourse">Create a course</button>
-        <button id="findCourse">Find a course</button>
+        <div id="profile-content">
+        <br /><br /><br /><br /><br /><br /><br />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h3 className="display-1 text-center"><strong className="white-txt" id="profileNameDisplay">John Doe</strong></h3>
+            </div>
+          </div>
+          <br /><br /><br /><br />
+          <div className="container topic-box">
+            <div className="row">
+              <div className="container category-title">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h4 className="white-txt display-4">Enrolled Courses</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="container" id="courses-box">
+                <div className="row">
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>    
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>                  
+            </div>
+          </div>
+          <hr />
+          <div className="container topic-box">
+            <div className="row">
+              <div className="container category-title">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h4 className="white-txt display-4">Completed Courses</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="container" id="courses-box">
+                <div className="row">
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>    
+                    </div>
+                  </div>
+                  <div className="col-lg-3">
+                    <div className="container course-view">
+                      <div className="row">
+                        <div className="col-sm-12 course-img">
+                          <h5 className="course-title"><strong>Course Title</strong></h5>
+                          <p>Course Summary</p>
+                          <p className="course-author">Author</p>
+                        </div>                          
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>                  
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     );
   }
