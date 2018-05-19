@@ -1,41 +1,59 @@
+
+
 const router = require("express").Router();
 const passport = require('passport');
-require('../config/passport')(passport);
+require('../../../../config/passport')(passport);
+const Course = require("../../../../models/Course");
+const db = require("../../../../models");
+const courseController = require("../../../../controllers/api/courseController");
 
-router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
-  if (token) {
+router.route("/")
+  .get(unitController.get)
+  .post(unitController.post);
 
-  } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
-  }
-});
+router.route("/:id")
+  .get(unitController.getById)
 
-router.post('/', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
-  if (token) {
+  .post(unitController.postById);
 
-  } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
-  }
-});
 
-router.get('/:id', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
-  if (token) {
 
-  } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
-  }
-});
 
-router.post('/:id', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
-  if (token) {
 
-  } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
-  }
-});
+// router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
+//   var token = getToken(req.headers);
+//   if (token) {
+
+//   } else {
+//     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+//   }
+// });
+
+// router.post('/', passport.authenticate('jwt', { session: false}), function(req, res) {
+//   var token = getToken(req.headers);
+//   if (token) {
+
+//   } else {
+//     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+//   }
+// });
+
+// router.get('/:id', passport.authenticate('jwt', { session: false}), function(req, res) {
+//   var token = getToken(req.headers);
+//   if (token) {
+
+//   } else {
+//     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+//   }
+// });
+
+// router.post('/:id', passport.authenticate('jwt', { session: false}), function(req, res) {
+//   var token = getToken(req.headers);
+//   if (token) {
+
+//   } else {
+//     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+//   }
+// });
 
 module.exports = router;
