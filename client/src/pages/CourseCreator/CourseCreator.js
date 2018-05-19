@@ -14,7 +14,7 @@ class CourseCreator extends Component {
   render() {
     return (
         <div id="bg">
-        {/* <CourseCreation /> */}
+        <CourseCreation />
         {/* <UnitCreation />  */}
         {/* <LessonCreation />  */}
         </div>

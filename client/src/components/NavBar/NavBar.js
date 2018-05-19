@@ -17,16 +17,16 @@ const NavBar = props => (
                   <a className="nav-link" href="">Catalog</a>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+                  <a className="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                   <div className="dropdown-menu" aria-labelledby="dropdown09" id="dropdown">
-                    <a className="dropdown-item" href="">Courses</a>
+                    <a className="dropdown-item" href="">My Courses</a>
                     <a className="dropdown-item" href="">Settings</a>
-                    <a className="dropdown-item" href="">Drafts</a>
+                    <a className="dropdown-item" href="">Log Out</a>
                   </div>
                 </li>
               </ul>
-              <button className="btn btn-nav">Log in</button>
-              <button className="btn btn-nav">Sign Up</button>
+              <button className="btn btn-nav">Find Course</button>
+              <button className="btn btn-nav">Create Course</button>
             </div>
           </nav>
         </div>
