@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+
 import { Container, Row, Col } from "../../components/Grid";
 import CourseCreatorInterface from "../../components/CourseCreatorInterface";
 import CourseCreation from "../../components/CourseCreation";
@@ -7,16 +9,31 @@ import LessonCreation from "../../components/LessonCreation";
 import "./CourseCreator.css";
 
 class CourseCreator extends Component {
-    state = {
-  
-    };
+  state = {
+    course: {
+      units: [],
+      lessons: []
+    }
+  };
+
+  componentWillMount() {
+    // if we are modifying an existing course; load in the data and populate state
+    const action = this.props.match.params.action;
+    if (action === "modify") {
+      const courseId = this.props.match.params.course_id;
+      
+    }
+  }
 
   render() {
     return (
-        <div id="bg">
-        <CourseCreation />
-        {/* <UnitCreation />  */}
-        {/* <LessonCreation />  */}
+        <div id="bg" className="primary-layout">
+          <Switch>
+            <Route exact path="/course-creator/:action/course/:course_id" component={CourseCreation} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id" component={UnitCreation} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id"component={LessonCreation} />
+            <Redirect to="/" />
+          </Switch>
         </div>
     );
   }
