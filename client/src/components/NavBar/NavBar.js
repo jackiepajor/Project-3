@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.css";
 
 const NavBar = props => (
+
     <div className="container" id="nav-container">
           <nav className="navbar navbar-expand-lg navbar-dark" id="nav">
             <a href=""><img id="logo" alt="Grasshopper" src={require("./logo-2.png")} /></a>
@@ -22,6 +23,9 @@ const NavBar = props => (
                     <a className="dropdown-item" href="/my-courses">My Courses</a>
                     <a className="dropdown-item" href="">Settings</a>
                     <a className="dropdown-item" href="">Log Out</a>
+                    {localStorage.getItem('jwtToken') &&
+                    <a className="dropdown-item" onClick={this.logout}>Logout</a>
+                  }
                   </div>
                 </li>
               </ul>
