@@ -23,12 +23,12 @@ module.exports = {
   post: function(req, res) {
     var token = getToken(req.headers);
     // if (token) {
-      let newCourse = new Course({
+      var newCourse = new Course({
         title: req.body.title,
-        description: req.body.description,
-        category: req.body.category
+        topic: req.body.topic,
+        synopsis: req.body.synopsis
       });
-      db.Course.create({ newCourse })
+      db.Course.create(newCourse)
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -37,6 +37,30 @@ module.exports = {
         })
     // } else {
     //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // }
+  },
+  getById: function(req, res) {
+    var token = getToken(req.headers);
+    // if (token) {
+      db.Course.findOne({ _id: req.params._id })
+        .then(function(dbCourse) {
+          res.json(dbCourse);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        })
+    // }
+  },
+  postById: function(req, res) {
+    var token = getToken(req.headers);
+    // if (token) {
+      db.Course.findOneAndUpdate({ _id: req.params._id })
+        .then(function(dbCourse) {
+          res.json(dbCourse);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        })
     // }
   }
 }
