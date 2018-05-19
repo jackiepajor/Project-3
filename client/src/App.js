@@ -13,6 +13,7 @@ import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
 import Contact from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
+import ViewCourses from "./pages/ViewCourses";
 
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route exact path="/our-team" component={OurTeam} />
+          <Route exact path="/view-course" component={ViewCourses} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />

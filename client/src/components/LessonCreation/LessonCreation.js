@@ -45,7 +45,8 @@ const LessonCreation = props => (
       </div>
       <br />
       <div className="container">
-        <button type="button" className="btn btn-hopper btn-course btn-lg">Creat Course</button>
+        <button type="button" className="btn btn-hopper btn-course btn-lg bottom-btns">View Course</button>
+        <button type="button" className="btn btn-hopper btn-course btn-lg bottom-btns">Add Lesson</button>
       </div>
     </div>
   </div>

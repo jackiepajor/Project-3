@@ -53,7 +53,7 @@ const CourseCreation = props => (
       </div>
       <br />
       <div className="container">
-        <button type="button" className="btn btn-hopper btn-course btn-lg">Creat Course</button>
+        <a href=""><button type="button" className="btn btn-hopper btn-course btn-lg">Create Course</button></a>
       </div>
     </div>
   </div>
