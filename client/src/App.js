@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar";
 import CourseCreatorInterface from "./components/CourseCreatorInterface";
 import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
-import Contact from "./pages/ContactUs";
+import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
