@@ -11,22 +11,22 @@ const NavBar = props => (
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto" id="ul">
                 <li className="nav-item active">
-                  <a className="nav-link" href="">Home <span className="sr-only">(current)</span></a>
+                  <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">Catalog</a>
+                  <a className="nav-link" href="/course-overview">Catalog</a>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+                  <a className="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                   <div className="dropdown-menu" aria-labelledby="dropdown09" id="dropdown">
-                    <a className="dropdown-item" href="">Courses</a>
+                    <a className="dropdown-item" href="/my-courses">My Courses</a>
                     <a className="dropdown-item" href="">Settings</a>
-                    <a className="dropdown-item" href="">Drafts</a>
+                    <a className="dropdown-item" href="">Log Out</a>
                   </div>
                 </li>
               </ul>
-              <button className="btn btn-nav">Log in</button>
-              <button className="btn btn-nav">Sign Up</button>
+              <a href="/course-overview" ><button className="btn btn-nav">Find Course</button></a>
+              <a href="/course-creator"><button className="btn btn-nav">Create Course</button></a>
             </div>
           </nav>
         </div>
