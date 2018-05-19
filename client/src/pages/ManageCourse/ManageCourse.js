@@ -11,7 +11,6 @@ class ManageCourse extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <div class="jumbotron">
         <h1>Course Manager</h1>
         <h3>In this section, you are able to add, modify, and delete courses</h3>

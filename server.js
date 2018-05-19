@@ -26,9 +26,11 @@ app.use(logger("dev"));
 
 const book = require("./routes/book");
 const auth = require("./routes/auth");
+const course = require("./routes/api/course/course");
 
 app.use('/api/book', book);
 app.use('/api/auth', auth);
+app.use('/api/course', course);
 
 app.use(function(req, res, next) {
   var err = new Error("Not Found");
@@ -40,8 +42,8 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  res.status(err.status || 500);
-  res.render("error");
+  res.send(err.status || 500);
+  // res.json("error");
 });
 
 // Start the API server
