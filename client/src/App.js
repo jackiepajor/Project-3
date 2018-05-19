@@ -11,15 +11,11 @@ import NavBar from "./components/NavBar";
 import CourseCreatorInterface from "./components/CourseCreatorInterface";
 import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
-import Contact from "./pages/ContactUs";
+import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
-<<<<<<< HEAD
-import Form from "./pages/ContactUs/Form";
-=======
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
 import LessonCreation from "./components/LessonCreation";
->>>>>>> c8d848848cd0dd6257eab88bfebef7161720fe74
 
 const renderNavButtons = () => {
   let path = window.location.pathname;
