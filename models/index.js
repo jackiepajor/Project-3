@@ -1,10 +1,10 @@
 
 module.exports = {
 
-  User: require("./User"),
+  User: require("./user"),
   Course: require("./Course"),
-  Unit: require("./Unit"),
-  Lesson: require("./Lesson")
+  Unit: require("./unit"),
+  Lesson: require("./lesson")
 
 };
 
