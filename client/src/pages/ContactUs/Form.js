@@ -29,7 +29,7 @@ class Form extends Component {
       <div>
         {/* Name field */}
         <Field
-        label="Name" 
+        label="Name"
         onChange={(event) => this.updateField('name', event.target.value)} 
         value={this.state.name} />
 

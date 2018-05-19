@@ -45,7 +45,7 @@ render() {
         <button
          disabled={this.state.isClicked}
          onClick={this.logFormDataToConsole}>
-         Contact Us
+         Submit
          </button>
     );
   }
