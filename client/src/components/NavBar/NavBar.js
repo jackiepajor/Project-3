@@ -1,11 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
+
 const NavBar = props => (
     <div className="container" id="nav-container">
           <nav className="navbar navbar-expand-lg navbar-dark" id="nav">
