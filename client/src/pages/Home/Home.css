@@ -9,6 +9,7 @@
     rgba(75, 195, 97, 0.11)), url("./bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1400px;
-    
+    background-size: 100%;
   }
+
+  

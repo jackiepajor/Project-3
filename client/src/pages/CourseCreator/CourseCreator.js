@@ -1,60 +1,40 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+
 import { Container, Row, Col } from "../../components/Grid";
 import CourseCreatorInterface from "../../components/CourseCreatorInterface";
+import CourseCreation from "../../components/CourseCreation";
+import UnitCreation from "../../components/UnitCreation";
+import LessonCreation from "../../components/LessonCreation";
+import "./CourseCreator.css";
 
 class CourseCreator extends Component {
-    state = {
-  
-    };
+  state = {
+    course: {
+      units: [],
+      lessons: []
+    }
+  };
+
+  componentWillMount() {
+    // if we are modifying an existing course; load in the data and populate state
+    const action = this.props.match.params.action;
+    if (action === "modify") {
+      const courseId = this.props.match.params.course_id;
+      
+    }
+  }
 
   render() {
     return (
-        <CourseCreatorInterface>
-
-        <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <h4 className="display-3" contenteditable="true">Course Title</h4>
-              </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-12">
-                  <p contenteditable="true">Description</p>
-                </div>
-            </div>
-          </div>
-
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                    <button className="btn btn-outline-secondary" type="button">Add</button>
-                  </div>
-                  <select className="custom-select" id="inputGroupSelect03">
-                    <option selected>Course Category</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                      <button className="btn btn-outline-secondary" type="button">Add</button>
-                     </div>
-                        <input type="text" className="form-control" placeholder="Course Requirements" aria-label="" aria-describedby="basic-addon1" />
-                  </div>
-            </div>
-          </div>
-         
+        <div id="bg" className="primary-layout">
+          <Switch>
+            <Route exact path="/course-creator/:action/course/:course_id" component={CourseCreation} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id" component={UnitCreation} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id"component={LessonCreation} />
+            <Redirect to="/" />
+          </Switch>
         </div>
-       
-
-        <div className="container">
-                <button type="button" className="btn btn-lg btn-secondary butt">Add Unit</button>
-        </div>
-    
-        </CourseCreatorInterface>
     );
   }
 }

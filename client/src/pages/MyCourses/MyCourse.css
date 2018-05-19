@@ -1,0 +1,25 @@
+#profile-jumbo {
+    width: 100%;
+    position: relative;
+    top: 0;
+    border-radius: 0;
+    margin-top: -100px;
+    height: 50px;
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
+    background-color: #28423e;
+  }
+  
+  #profile-content {
+    height: 1000px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin-top: -100px;
+    background:linear-gradient(#28423e, 
+    #4bc362);
+  }
+  
+  #profileNameDisplay {
+    border-bottom: 1px solid white;
+  }
