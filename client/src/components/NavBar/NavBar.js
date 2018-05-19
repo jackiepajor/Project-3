@@ -23,8 +23,6 @@ const NavBar = props => (
                     <a className="dropdown-item" href="/my-courses">My Courses</a>
                     <a className="dropdown-item" href="">Settings</a>
                     <a className="dropdown-item" href="">Log Out</a>
-                    {localStorage.getItem('jwtToken') &&
-                    <a className="dropdown-item" onClick={this.logout}>Logout</a>
                   }
                   </div>
                 </li>

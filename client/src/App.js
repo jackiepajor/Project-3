@@ -15,6 +15,7 @@ import OurTeam from "./pages/OurTeam";
 import Contact from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 
 class App extends Component {
@@ -36,6 +37,8 @@ class App extends Component {
       .catch((error) => {
         if(error) {
           this.props.history.push('/login');
+          // window.location.reload('/login');
+          // break;
         }
       })
   }
@@ -49,9 +52,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-        {localStorage.getItem('jwtToken') &&
-                    <button class="btn btn-nav" onClick={this.logout}>Logout</button>
-                  }
             <NavBar />
             <Switch>
               <Route exact path="/" component={Home}/>
@@ -72,4 +72,4 @@ class App extends Component {
   }
 };
 
-export default App;
+export default withRouter(App);

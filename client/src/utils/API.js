@@ -15,4 +15,21 @@ export default {
   // saveBook: function(bookData) {
   //   return axios.post("/api/books", bookData);
   // }
+  checkLoginStatus: function() {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+    axios.get('/api/course')
+      .then(res => {
+        this.setState({ courses: res.data });
+        console.log(this.state.courses);
+      })
+      .catch((error) => {
+        if(error) {
+          this.props.history.push('/login');
+        }
+      })
+  },
+  logout: function() {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
 };
