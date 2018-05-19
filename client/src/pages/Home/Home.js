@@ -13,7 +13,7 @@ class Home extends Component {
   render() {
     return (
       <div className="jumbotron jumbotron-fluid" id="main-jumbo">
-      
+        
       </div>
     );
   }
