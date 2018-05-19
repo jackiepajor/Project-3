@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar";
 import CourseCreatorInterface from "./components/CourseCreatorInterface";
 import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
-import Contact from "./pages/ContactUs";
+import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
@@ -59,6 +59,7 @@ const App = (props) => (
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route exact path="/our-team" component={OurTeam} />
+          <Route exact path="/contact-us" component={Form} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />
