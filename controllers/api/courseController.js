@@ -23,6 +23,7 @@ module.exports = {
   post: function(req, res) {
     var token = getToken(req.headers);
     // if (token) {
+      console.log(req.body);
       var newCourse = new Course({
         title: req.body.title,
         topic: req.body.topic,
