@@ -1,63 +1,71 @@
 import React from "react";
 import "./CourseCreation.css";
+import { Link } from "react-router-dom";
+import { List, ListItem} from "../List";
+
+const renderLessons = lessons => {
+  return (
+    <List>
+      {
+        lessons.map((lesson, index) => (
+          <ListItem
+            key={lesson._id}>
+            <h6><strong>Lesson <span className="lesson-number">{index + 1}</span> <span className="lesson-name">{lesson.title}</span></strong></h6>
+          </ListItem>
+        ))
+      }
+      <ListItem>
+        <button className="btn btn-primary ">Add Lesson</button>
+      </ListItem>
+    </List>
+  );
+}
+
+const renderUnits = units => {
+  //let lessons = units.lessons ? renderLessons(units.lessons) : null;
+  let unitIndex = 1;
+  return (
+    <List>
+      {
+        units.map((unit, index) => (
+          <ListItem
+            key={unit._id}>
+            <h5><strong>Unit <span className="unit-number">{index + 1}</span></strong> <span className="unit-name">{unit.name}</span></h5 > 
+            {/* Render all sub lessons for the current unit */}
+            {renderLessons(unit.lessons)}
+          </ListItem>
+        ))
+      }
+      <ListItem>
+        <h5 contentEditable="true" className="add-unit-item">Add Unit Title...</h5>
+        <button className="btn btn-primary">Save</button>
+        <button className="btn btn-primary ">Add Unit</button>
+      </ListItem>
+    </List>
+  );
+};
 
 const CourseCreation = props => (
+  <div className="main-content">
+    {renderUnits(props.course.units)}
 
-
-    <div className="main-content">
-    <br /><br /><br /><br /><br /><br />
-   
-    <div className="container white-txt">
-      <h3 className="display-3"><strong>Course Creator</strong></h3>
-      <hr />
-      <blockquote><strong>How to </strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere temporibus mollitia eos ipsa dolore amet laboriosam distinctio. Non quidem tenetur a, rem aperiam exercitationem laborum ratione illum atque? Tempora mollitia ratione recusandae quo explicabo officiis dolores deleniti natus sunt aspernatur.</blockquote>
-      <hr />
-    </div>
-
-    <div className="jumbotron jumbotron-fluid">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <h4 className="display-3" contentEditable="true">Add Course Title...</h4>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <p contentEditable="true">Add Description...</p>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <button className="btn btn-hopper" type="button">Add</button>
-              </div>
-              <select className="custom-select" id="category-dropdown">
-                <option selected>Course Category</option>
-                <option value={1}>One</option>
-                <option value={2}>Two</option>
-                <option value={3}>Three</option>
-              </select>
+    {/* <div className="container" id="inner-preview">
+        <div className="row" >
+            <div className="col-lg-3">
+                <h5><strong>Unit <span class="unit-number">1</span></strong></h5>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <button className="btn btn-hopper" type="button">Add</button>
-              </div>
-              <input type="text" className="form-control" placeholder="Course Requirements" aria-label aria-describedby="basic-addon1" />
+            <div className="col-lg-5 text-center">
+                <h5 contentEditable="true">Add Unit Title...</h5>
             </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div className="container">
-        <button type="button" className="btn btn-hopper btn-course btn-lg">Creat Course</button>
-      </div>
-    </div>
+            <div className="col-lg-4 text-right">
+                <button className="btn btn-less">Save</button>
+                <button className="btn btn-less">Add Lesson</button>
+            </div>
+            {/* <div className="col-lg-1 text-right">
+                <span className="x"><i class="fa fa-check status-icon" aria-hidden="true"></i></span>
+            </div> */}
+        {/* </div><hr /> */} 
   </div>
-
 );
 
 export default CourseCreation;
