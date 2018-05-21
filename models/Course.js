@@ -22,6 +22,11 @@ var CourseSchema = new Schema({
         
     },
 
+    unit: [{
+        type: Schema.Types.ObjectId,
+        ref: "Unit"
+      }]
+
 
  
 })
