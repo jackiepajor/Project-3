@@ -6,9 +6,9 @@ const Unit = require("../../models/Unit");
 const db = require("../../models");
 
 module.exports = {
-  get: function(req, res) {
+  getUnits: function(req, res) {
     var token = getToken(req.headers);
-    if (token) {
+    // if (token) {
       db.Unit.find({})
         .then(function(dbUnit) {
           res.json(dbUnit);
@@ -16,11 +16,11 @@ module.exports = {
         .catch(function(err) {
           res.json("Error message: " + err);
         })
-    } else {
-      return res.status(403).send({success: false, msg: 'Unauthorized.'});
-    }
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // }
   },
-  post: function(req, res) {
+  createUnit: function(req, res) {
     var token = getToken(req.headers);
     // if (token) {
       let newUnit = new Unit({
@@ -28,8 +28,6 @@ module.exports = {
         author: req.body.author,
         category: req.body.category,
         lessons: req.body.lessons
-
-
       });
       db.Unit.create({ newUnit })
         .then(function(dbUnit) {
@@ -41,5 +39,47 @@ module.exports = {
     // } else {
     //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
     // }
+  },
+  getUnit: function(req, res) {
+    var token = getToken(req.headers);
+    // if (token) {
+      db.Unit.findOne({ _id: req.params.id })
+        .then(function(dbUnit) {
+          res.json(dbUnit);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        });
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // }
+  },
+  updateUnit: function(req, res) {
+    var token = getToken(req.headers);
+    // if (token) {
+      db.Unit.findOneAndUpdate({ _id: req.params.id }, { data }, { new: true })
+        .then(function(dbUnit) {
+          res.json(dbUnit);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        });
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // }
+  },
+  deleteUnit: function(req, res) {
+    var token = getToken(req.headers);
+    // if (token) {
+      db.Unit.findOneAndRemove({ _id: req.params.id })
+        .then(function(dbUnit) {
+          res.json(dbUnit);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        });
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // };
   }
 }

@@ -22,8 +22,7 @@ module.exports = {
   },
   createCourse: function(req, res) {
     var token = getToken(req.headers);
-    // if (token) {
-      console.log(req.body);
+    // if (token) {;
       var newCourse = new Course({
         title: req.body.title,
         topic: req.body.topic,
@@ -83,3 +82,16 @@ module.exports = {
     // };
   }
 }
+
+getToken = function (headers) {
+  if (headers && headers.authorization) {
+    var parted = headers.authorization.split(' ');
+    if (parted.length === 2) {
+      return parted[1];
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+};

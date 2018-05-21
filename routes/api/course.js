@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const passport = require('passport');
-require('../../../config/passport')(passport);
-const Course = require("../../../models/Course");
-const db = require("../../../models");
-const courseController = require("../../../controllers/api/courseController");
+const passport = require("passport");
+const settings = require("../../config/settings");
+require("../../config/passport")(passport);
+const jwt = require("jsonwebtoken");
+const courseController = require("../../controllers/api/courseController");
 
 router.route("/")
   .get(courseController.getCourses)
