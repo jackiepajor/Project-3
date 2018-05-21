@@ -18,12 +18,12 @@ const LessonCreation = props => (
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <h4 className="display-3" contentEditable="true">Add Lesson Title...</h4>
+            <h4 className="display-4" contentEditable="true">Add Lesson Title...</h4>
           </div>
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <p contentEditable="true">Add Description...</p>
+            <p  contentEditable="true">Add Description...</p>
           </div>
         </div>
       </div>
@@ -32,12 +32,12 @@ const LessonCreation = props => (
         <div className="row">
           <div className="col-lg-12">
             <div className="input-group mb-3">
-                <div className="input-group-prepend">
+                <div className="input-group-prepend" id="file">
                     <button className="btn btn-hopper" type="button">Add</button>
                 </div>
                 <div className="custom-file" id="file-upload">
-                    <input type="file" className="custom-file-input"  />
-                    <label className="custom-file-label" for="inputGroupFile03">Choose file</label>
+                    <input type="file" className="custom-file-input file"  />
+                    <label className="custom-file-label file" for="file-upload">Choose file</label>
                 </div>
             </div>
           </div>
