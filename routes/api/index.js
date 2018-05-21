@@ -6,8 +6,8 @@ const lessonRoutes = require("./lesson");
 
 // API Routes
 router.use("/api/course", courseRoutes);
-router.use("/api/unit", unitRoutes);
-router.use("/api/lesson", lessonRoutes);
+router.use("/api/course/:id/unit", unitRoutes);
+router.use("/api/course/:id/unit/:id/lesson", lessonRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
