@@ -14,3 +14,5 @@ LessonSchema = new Schema({
     created:     {type: Date, default: Date.now }
 });
 var Lesson = mongoose.model('Lesson', LessonSchema);//add
+
+module.exports = Lesson;

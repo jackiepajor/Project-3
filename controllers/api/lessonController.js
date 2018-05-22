@@ -22,15 +22,20 @@ module.exports = {
   },
   createLesson: function(req, res) {
     var token = getToken(req.headers);
+    // console.log(req.body);
     // if (token) {
+      console.log(Lesson);
       let newLesson = new Lesson({
         title: req.body.title,
         images: req.body.images,
         videos: req.body.videos,
         body: req.body.body,
       });
+      console.log(newLesson);
       db.Lesson.create(newLesson)
         .then(function(dbLesson) {
+
+          console.log(dbLesson);
           res.json(dbLesson);
         })
         .catch(function(err) {

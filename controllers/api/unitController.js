@@ -29,7 +29,7 @@ module.exports = {
         category: req.body.category,
         lessons: req.body.lessons
       });
-      db.Unit.create({ newUnit })
+      db.Unit.create(newUnit)
         .then(function(dbUnit) {
           res.json(dbUnit);
         })
