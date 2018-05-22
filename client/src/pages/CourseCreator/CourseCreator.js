@@ -12,6 +12,46 @@ class CourseCreator extends Component {
   state = {
     course: {
       units: [
+        {
+          _id: "434",
+          name: "Reading out loud",
+          lessons: [
+            {title: "foo"},
+            {title: "bar"},
+            {title: "foo_bar"}
+          ]
+        },
+        {
+          _id: "4",
+          name: "Reading out silent",
+          lessons: [
+            {title: "blarg"},
+            {title: "blargy"},
+            {title: "blargument"}
+          ]
+        },
+        {
+          _id: "34",
+          name: "Reading illeteracy",
+          lessons: [
+            {title: "lol"},
+            {title: "haha"}
+          ]
+        },
+        {
+          _id: "1",
+          name: "Loud reading",
+          lessons: [
+
+          ]
+        },
+        {
+          _id: "14",
+          name: "Loud reading",
+          lessons: [
+
+          ]
+        },
 
       ]
     }
@@ -30,25 +70,24 @@ class CourseCreator extends Component {
     }
   }
 
-  handleAddCourse() {
-
+  handleAddCourse(course_id, data) {
+    alert("handle add course");
   }
 
-  handleAddUnit() {
-
+  handleAddUnit(course_id, unit_id, data) {
+    alert("handled unit add");
   }
 
-  handleAddLesson() {
-
+  handleAddLesson(course_id, unit_id, lesson_id, data) {
+    alert("handled lesson add");
   }
 
   render() {
     return (
         <div id="bg" className="primary-layout">
           <Switch>
-            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation handleAddCourse={this.handleAddCourse} course={this.state.course}/>} />} />
-            {/* <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id" component={() => <UnitCreation handleAddLesson={this.handleAddLesson}/>} /> */}
-            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id"component={() => <LessonCreation handleAddLesson={this.handleAddLesson}/>} />
+            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course}/>} />} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson}/>} />
             <Redirect to="/" />
           </Switch>
         </div>
