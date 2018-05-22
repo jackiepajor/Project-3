@@ -74,7 +74,13 @@ class CourseCreator extends Component {
 
   handleAddCourse(data) {
     alert("handle add course");
-    API.createCourse(data);
+    API.createCourse(data)
+      .then(function(dbData) {
+        this.setState({dbData})
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
   }
 
   handleAddUnit(course_id, data) {
