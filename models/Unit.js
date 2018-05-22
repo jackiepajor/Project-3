@@ -16,7 +16,7 @@ var UnitSchema = new Schema ({
     category: {
         type: String 
     },
-    lessons: [    {
+    lessons: [{
         type: Schema.Types.ObjectId,
         ref: "Lesson"
       }]
