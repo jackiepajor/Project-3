@@ -27,7 +27,6 @@ var CourseSchema = new Schema({
         ref: "Unit"
       }]
 
-
  
 })
 // This creates our model from the above schema, using mongoose's model method

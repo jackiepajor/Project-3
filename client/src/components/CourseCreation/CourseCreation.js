@@ -1,7 +1,9 @@
 import React from "react";
-import "./CourseCreation.css";
-import { Link } from "react-router-dom";
+import { Link,  matchPath } from "react-router-dom";
 import { List, ListItem} from "../List";
+//import "./CourseCreation.css";
+
+let routeParams = {};
 
 const renderLessons = lessons => {
   return (
@@ -15,15 +17,15 @@ const renderLessons = lessons => {
         ))
       }
       <ListItem>
-        <button className="btn btn-primary ">Add Lesson</button>
+        <button className="btn btn-primary "><Link to="/course-creator/:action/course/:course_id/unit/:unit_id/lesson">Add Lesson</Link></button>
       </ListItem>
     </List>
   );
 }
 
-const renderUnits = units => {
-  //let lessons = units.lessons ? renderLessons(units.lessons) : null;
+const renderUnits = props => {
   let unitIndex = 1;
+  const units = props.course.units;
   return (
     <List>
       {
@@ -38,34 +40,26 @@ const renderUnits = units => {
       }
       <ListItem>
         <h5 contentEditable="true" className="add-unit-item">Add Unit Title...</h5>
-        <button className="btn btn-primary">Save</button>
-        <button className="btn btn-primary ">Add Unit</button>
+        <button className="btn btn-primary" onClick={props.handleAddUnit}>Add Unit</button>
       </ListItem>
     </List>
   );
 };
 
-const CourseCreation = props => (
-  <div className="main-content">
-    {renderUnits(props.course.units)}
+const parseParams = (location) => {
+  const matchProfile = matchPath(location, {
+    path: `/course-creator/:action/course/:course_id`,
+  });
+  return (matchProfile && matchProfile.params) || {};
+};
 
-    {/* <div className="container" id="inner-preview">
-        <div className="row" >
-            <div className="col-lg-3">
-                <h5><strong>Unit <span class="unit-number">1</span></strong></h5>
-            </div>
-            <div className="col-lg-5 text-center">
-                <h5 contentEditable="true">Add Unit Title...</h5>
-            </div>
-            <div className="col-lg-4 text-right">
-                <button className="btn btn-less">Save</button>
-                <button className="btn btn-less">Add Lesson</button>
-            </div>
-            {/* <div className="col-lg-1 text-right">
-                <span className="x"><i class="fa fa-check status-icon" aria-hidden="true"></i></span>
-            </div> */}
-        {/* </div><hr /> */} 
-  </div>
-);
+const CourseCreation = props => {
+  routeParams = parseParams(props.location.pathname);
+  return (
+    <div className="main-content">
+      {renderUnits(props)}
+    </div>
+  );
+};
 
 export default CourseCreation;
