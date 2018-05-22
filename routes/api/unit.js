@@ -5,11 +5,11 @@ require('../../config/passport')(passport);
 const jwt = require('jsonwebtoken');
 const unitController = require("../../controllers/api/unitController");
 
-router.route("/", passport.authenticate('jwt', { session: false }))
+router.route("/")
   .get(unitController.getUnits)
   .post(unitController.createUnit);
 
-router.route("/:id", passport.authenticate('jwt', { session: false }))
+router.route("/:id")
   .get(unitController.getUnit)
   .put(unitController.updateUnit)
   .delete(unitController.deleteUnit);
