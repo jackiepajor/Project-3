@@ -11,7 +11,7 @@ const NavBar = props => (
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto" id="ul">
                 <li className="nav-item active">
-                  <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
+                  <a className="nav-link" href="/home">Home</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/course-overview">Catalog</a>

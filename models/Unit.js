@@ -17,7 +17,7 @@ var UnitSchema = new Schema ({
         type: String 
     },
     lessons: [    {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "Lesson"
       }]
 });

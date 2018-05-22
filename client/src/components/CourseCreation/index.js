@@ -1,1 +1,1 @@
-export { default } from './CourseCreation.js';
+export { default } from "./CourseCreation.js";

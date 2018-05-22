@@ -13,6 +13,7 @@ import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
 import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
+import ViewCourses from "./pages/ViewCourses";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
 import LessonCreation from "./components/LessonCreation";
@@ -59,6 +60,7 @@ const App = (props) => (
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route exact path="/our-team" component={OurTeam} />
+          <Route exact path="/view-course" component={ViewCourses} />
           <Route exact path="/contact-us" component={Form} />
           <Route component={NoMatch} />
         </Switch>
