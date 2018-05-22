@@ -7,7 +7,6 @@ const db = require("../../models");
 
 module.exports = {
   getCourses: function(req, res) {
-    console.log(jwt.decode);
     if (req.headers.jwttoken) {
       db.Course.find({})
         .then(function(dbCourse) {
