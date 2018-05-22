@@ -1,60 +1,90 @@
-const mongoose = require("mongoose");
-const db = require("../models");
-mongoose.Promise = global.Promise;
 
-// This file empties the collection and inserts the courses below
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/grasshopper",
+var mongoose = require("mongoose");
+
+// // Requiring the `Category` model for accessing the `examples` collection
+var Category = require("../models/Category.js");
+
+
+var seeder = require('mongoose-seed');
+ 
+// Connect to MongoDB via Mongoose
+seeder.connect('mongodb://localhost/grasshopper', function() {
+ 
+  // Load Mongoose models
+  seeder.loadModels([
+      '../models/Category.js',
+      '../models/Course.js',
+      '../models/Unit.js',
+      '../models/Lesson.js',
+      
+      
+
+      
+  ]);
+ 
+  // Clear specified collections
+  seeder.clearModels(['Category', 'Course', 'Unit', 'Lesson'], function() {
+ 
+    // Callback to populate DB once collections have been cleared
+    seeder.populateModels(data, function() {
+      seeder.disconnect();
+    });
+ 
+  });
+});
+ 
+// Data array containing seed data - documents organized by Model
+var data = [
+    {
+        'model': 'Category',
+        'documents': [
+            {
+                'title': 'Technology'
+                // 'value': 200
+            },
+            {
+                'title': 'Science'
+                // 'value': 400
+            }
+        ]
+    },
+
+    {
+      'model': 'Course',
+      'documents': [
+          {
+              'title': 'Rocket Science 101',
+              'topic': 'The basics of rocket science.',
+              'synopsis': '3...2...1...Blast off!!!!',
+
+          },
+
+      ]
+  },
   {
-    useMongoClient: true
-  }
-);
+    'model': 'Unit',
+    'documents': [
+        {
+            'name': 'Unit 1',
+            'author': 'Jesse Springer',
+            'category': 'Science',
 
-const coursesSeed = [
-  {
-    units: [
-      {
-        name: "Reading out loud",
-        lessons: [
-          {title: "foo"},
-          {title: "bar"},
-          {title: "foo_bar"}
-        ]
-      },
-      {
-        name: "Reading out silent",
-        lessons: [
-          {title: "blarg"},
-          {title: "blargy"},
-          {title: "blargument"}
-        ]
-      },
-      {
-        name: "Reading illeteracy",
-        lessons: [
-          {title: "lol"},
-          {title: "haha"}
-        ]
-      },
-      {
-        name: "Loud reading",
-        lessons: [
+        },
 
-        ]
-      }
     ]
-  }
-];
+},
+  
 
-// we'll need to actually make the calls to the db models to create the courses, units, and lessons
-// db.Book
-//   .remove({})
-//   .then(() => db.Book.collection.insertMany(bookSeed))
-//   .then(data => {
-//     console.log(data.insertedIds.length + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
+  {
+    'model': 'Lesson',
+    'documents': [
+        {
+            'title': 'How to Land Your Spaceship on the Moon in 5 Easy Steps',
+
+        },
+
+    ]
+}
+
+    
+];
