@@ -7,6 +7,7 @@ import CourseCreation from "../../components/CourseCreation";
 import UnitCreation from "../../components/UnitCreation";
 import LessonCreation from "../../components/LessonCreation";
 import NewCourse from "../../components/NewCourse";
+import API from "../../utils/API";
 import "./CourseCreator.css";
 
 class CourseCreator extends Component {
