@@ -4,7 +4,7 @@ import "./NavBar.css";
 const NavBar = props => (
     <div className="container" id="nav-container">
           <nav className="navbar navbar-expand-lg navbar-dark" id="nav">
-            <a href=""><img id="logo" alt="Grasshopper" src={require("./logo-2.png")} /></a>
+            <a href="/"><img id="logo" alt="Grasshopper" src={require("./logo-2.png")} /></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
@@ -30,7 +30,7 @@ const NavBar = props => (
             </div>
           </nav>
         </div>
-      );
 
+      );
 
 export default NavBar;
