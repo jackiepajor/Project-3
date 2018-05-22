@@ -6,9 +6,8 @@ const Course = require("../../models/Course");
 const db = require("../../models");
 
 module.exports = {
-  get: function(req, res) {
-    var token = getToken(req.headers);
-    if (token) {
+  getCourses: function(req, res) {
+    // if (req.headers.jwttoken) {
       db.Course.find({})
         .then(function(dbCourse) {
           res.json(dbCourse);
@@ -16,19 +15,18 @@ module.exports = {
         .catch(function(err) {
           res.json("Error message: " + err);
         })
-    } else {
-      return res.status(403).send({success: false, msg: 'Unauthorized.'});
-    }
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // };
   },
-  post: function(req, res) {
-    var token = getToken(req.headers);
-    // if (token) {
+  createCourse: function(req, res) {
+    // if (req.headers.jwttoken) {
       let newCourse = new Course({
         title: req.body.title,
-        description: req.body.description,
-        category: req.body.category
+        topic: req.body.topic,
+        synopsis: req.body.synopsis
       });
-      db.Course.create({ newCourse })
+      db.Course.create(newCourse)
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -38,5 +36,44 @@ module.exports = {
     // } else {
     //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
     // }
+  },
+  getCourse: function(req, res) {
+    // if (req.headers.jwttoken) {
+      db.Course.findOne({ _id: req.params.id })
+        .then(function(dbCourse) {
+          res.json(dbCourse);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        })
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // };
+  },
+  updateCourse: function(req, res) {
+    // if (req.headers.jwttoken) {
+      db.Course.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .then(function(dbCourse) {
+          res.json(dbCourse);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        })
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // };
+  },
+  deleteCourse: function(req, res) {
+    // if (req.headers.jwttoken) {
+      db.Course.findOneAndRemove({ _id: req.params.id })
+        .then(function(dbCourse) {
+          res.json(dbCourse);
+        })
+        .catch(function(err) {
+          res.json("Error message: " + err);
+        })
+    // } else {
+    //   return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    // };
   }
 }

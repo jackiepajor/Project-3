@@ -1,7 +1,7 @@
 
 .main-content {
-    height: 1000px;
     width: 100%;
+    margin-bottom: -250px;
     position: relative;
     top: 0;
     margin-top: -100px;
@@ -35,12 +35,7 @@
     color:rgba(255, 255, 255, 0.959);
     background-color: #3a8d4a;
   }
-
-  .bottom-btns {
-    margin: 0px 10px 0px 10px;
-  }
-
-  .file {
+  
+  #category-dropdown {
     height: 50px;
   }
- 

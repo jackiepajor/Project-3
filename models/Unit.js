@@ -10,23 +10,17 @@ var UnitSchema = new Schema ({
     name: {
         type: String
     },
-
     author: {
         type: String
     },
-
     category: {
-        type: String
-        
+        type: String 
     },
-
     lessons: [    {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "Lesson"
       }]
-
-
-})
+});
 
 
 

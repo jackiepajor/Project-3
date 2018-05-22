@@ -73,7 +73,7 @@ const Footer = props => (
     
                 <div className="py-3 text-center" id="footer-copyright">
                     © 2018 Copyright:
-                    <a href="" className="footer-link">
+                    <a href="/" className="footer-link">
                         <strong> Grasshopper.com</strong>
                     </a>
                 </div>
