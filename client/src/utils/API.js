@@ -43,14 +43,13 @@ export default {
   getLesson: function(courseId, unitId, lessonId) {
     return axios.get(`/api/course/${courseId}/unit/${unitId}/lesson/${lessonId}`);
   },
-  createLesson: function(data) {
+  createLesson: function(courseId, unitId, data) {
     return axios.post(`/api/course/${courseId}/unit/${unitId}/lesson/`, data);
   },
-  deleteLesson: function(courseId, unitId, lessonId) {
+  deleteLesson: function(courseId, unitId, lessonId, data) {
     return axios.delete(`/api/course/${courseId}/unit/${unitId}/lesson/${lessonId}`, data);
   },
   updateLesson: function(courseId, unitId, lessonId, data) {
     return axios.put(`/api/course/${courseId}/unit/${unitId}/lesson/${lessonId}`, data);
   }
-  
 };
