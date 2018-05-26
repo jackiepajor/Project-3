@@ -62,9 +62,11 @@ class CourseCreator extends Component {
     alert("handle add course");
     API.createCourse(data)
       .then(function(dbCourse) {
+        //add logic 
         console.log(dbCourse);
       })
       .catch(function(err) {
+        //add logic 
         console.log(err);
       })
   }
@@ -73,9 +75,11 @@ class CourseCreator extends Component {
     alert("handled unit add");
     API.createUnit(course_id, data)
       .then(function(dbUnit) {
+        //add logic
         console.log(dbUnit);
       })
       .catch(function(err) {
+        //add logic 
         console.log(err);
       })
   }
