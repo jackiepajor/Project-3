@@ -26,7 +26,7 @@ const NavBar = props => (
                 </li>
               </ul>
               <a href="/course-overview" ><button className="btn btn-nav">Find Course</button></a>
-              <a href="/course-creator"><button className="btn btn-nav">Create Course</button></a>
+              <a href="/course-creator/create/course"><button className="btn btn-nav">Create Course</button></a>
             </div>
           </nav>
         </div>
