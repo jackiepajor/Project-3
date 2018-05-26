@@ -1,8 +1,13 @@
 #bg {
     position: relative;
     top: 0;
-    margin: -100px 0px 250px 0px;
-    background:linear-gradient(#28423e, 
-    #4bc362);
+    margin: 50px 0px 350px 0px;
+    height: 100%;
+    width: 100%;
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
+    background: transparent!important;
+} 
 
-}
+
+

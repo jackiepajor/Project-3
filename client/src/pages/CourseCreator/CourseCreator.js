@@ -1,22 +1,106 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+
 import { Container, Row, Col } from "../../components/Grid";
 import CourseCreatorInterface from "../../components/CourseCreatorInterface";
 import CourseCreation from "../../components/CourseCreation";
 import UnitCreation from "../../components/UnitCreation";
 import LessonCreation from "../../components/LessonCreation";
+import NewCourse from "../../components/NewCourse";
+import API from "../../utils/API";
 import "./CourseCreator.css";
 
 class CourseCreator extends Component {
-    state = {
-  
-    };
+  state = {
+    course: {
+      units: [
+        {
+          _id: "434",
+          name: "Reading out loud",
+          lessons: [
+            {title: "foo"},
+            {title: "bar"},
+            {title: "foo_bar"}
+          ]
+        },
+        {
+          _id: "4",
+          name: "Reading out silent",
+          lessons: [
+            {title: "blarg"},
+            {title: "blargy"},
+            {title: "blargument"}
+          ]
+        },
+        {
+          _id: "34",
+          name: "Reading illeteracy",
+          lessons: [
+            {title: "lol"},
+            {title: "haha"}
+          ]
+        }
+
+      ]
+    }
+  };
+
+  componentWillMount() {
+    // if we are modifying an existing course; load in the data and populate state
+    const action = this.props.match.params.action;
+    if (action === "modify") {
+      const courseId = this.props.match.params.course_id;
+      
+    }
+
+    window.changeComponentState = (stateObject) => {
+      this.setState ({stateObject});
+    }
+  }
+
+  handleAddCourse(data) {
+    alert("handle add course");
+    API.createCourse(data)
+      .then(function(dbCourse) {
+        console.log(dbCourse);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+  }
+
+  handleAddUnit(course_id, data) {
+    alert("handled unit add");
+    API.createUnit(course_id, data)
+      .then(function(dbUnit) {
+        console.log(dbUnit);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+  }
+
+  handleAddLesson(course_id, unit_id, data) {
+    alert("handled lesson add");
+    API.createLesson(course_id, unit_id, data)
+      .then(function(dbLesson) {
+        console.log(dbLesson);
+      })
+      .catch(function(dbLesson) {
+        console.log(dbLesson);
+      })
+  }
 
   render() {
     return (
-        <div id="bg">
-        <CourseCreation />
-        {/* <UnitCreation />  */}
-        {/* <LessonCreation />  */}
+        <div id="bg" className="primary-layout">
+          {/* <div className="container" id="main-content"> */}
+            <Switch>
+              <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course}/>} />} />
+              <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson}/>} />
+              <Redirect to="/" />
+            </Switch>
+          {/* </div> */}
         </div>
     );
   }
