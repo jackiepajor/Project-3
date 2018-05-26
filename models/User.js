@@ -3,35 +3,35 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new Schema({
-  username: {
+    username: {
         type: String,
         unique: true,
         required: true
     },
-  password: {
+    password: {
         type: String,
         required: true
-    }
+    },
+    managedcourses: [{
+        type: Schema.Types.ObjectId,
+        ref: "Course"
+    }],
+    enrolledcourses: [{
+        type: Schema.Types.ObjectId,
+        ref: "Course"
+    }]
 
     // name: {
     //     type: String
     //   },
-    
-    //   managedCourses: {
-    //     type: String
-    //   },
-    
-    //   enrolledCourses: {
-    //     type: String
-    //   },
-    
+
     //   email: {
     //     type: String,
     //     unique: true,
     //     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
 
     //   },
-    
+
     //   password: {
     //     type: String,
     //     trim: true,
@@ -43,13 +43,6 @@ var UserSchema = new Schema({
     //       "Password should be longer."
     //     ]
     //   },
-    
-    
-    //   courses: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Course"
-    //   }]
-
 });
 
 UserSchema.pre('save', function (next) {

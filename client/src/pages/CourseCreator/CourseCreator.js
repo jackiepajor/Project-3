@@ -53,54 +53,57 @@ class CourseCreator extends Component {
       
     }
 
-    window.changeComponentState = (stateObject) => {
-      this.setState ({stateObject});
-    }
+    this.loadCourse();
+    // window.changeComponentState = (stateObject) => {
+    //   this.setState ({stateObject});
+    // }
   }
 
+  loadCourse() {
+    API.getCourse(this.state.course._id)
+      .then(res => {
+        this.setState({course: res.data});
+      })
+      .catch(err => console.log(err));
+  };
+
   handleAddCourse(data) {
-    alert("handle add course");
     API.createCourse(data)
       .then(function(dbCourse) {
+        //add logic 
         console.log(dbCourse);
       })
-      .catch(function(err) {
-        console.log(err);
-      })
+      .catch(err => console.log(err));
   }
 
   handleAddUnit(course_id, data) {
-    alert("handled unit add");
     API.createUnit(course_id, data)
       .then(function(dbUnit) {
+        //add logic
         console.log(dbUnit);
+        this.loadCourse();
       })
-      .catch(function(err) {
-        console.log(err);
-      })
+      .catch(err => console.log(err));
   }
 
   handleAddLesson(course_id, unit_id, data) {
-    alert("handled lesson add");
     API.createLesson(course_id, unit_id, data)
       .then(function(dbLesson) {
         console.log(dbLesson);
+        this.loadCourse();
       })
-      .catch(function(dbLesson) {
-        console.log(dbLesson);
-      })
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
         <div id="bg" className="primary-layout">
-          {/* <div className="container" id="main-content"> */}
-            <Switch>
-              <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course}/>} />} />
-              <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson}/>} />
-              <Redirect to="/" />
-            </Switch>
-          {/* </div> */}
+          <Switch>
+            <Route exact path="/course-creator/:action/course" component={() => <NewCourse location={this.props.location} handleAddCourse={this.handleAddCourse} />} />
+            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course} />} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson} />} />
+            <Redirect to="/" />
+          </Switch>
         </div>
     );
   }
