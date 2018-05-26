@@ -39,21 +39,7 @@ class CourseCreator extends Component {
             {title: "lol"},
             {title: "haha"}
           ]
-        },
-        {
-          _id: "1",
-          name: "Loud reading",
-          lessons: [
-
-          ]
-        },
-        {
-          _id: "14",
-          name: "Loud reading",
-          lessons: [
-
-          ]
-        },
+        }
 
       ]
     }
@@ -84,6 +70,7 @@ class CourseCreator extends Component {
   handleAddCourse(data) {
     API.createCourse(data)
       .then(function(dbCourse) {
+        //add logic 
         console.log(dbCourse);
       })
       .catch(err => console.log(err));
@@ -92,6 +79,7 @@ class CourseCreator extends Component {
   handleAddUnit(course_id, data) {
     API.createUnit(course_id, data)
       .then(function(dbUnit) {
+        //add logic
         console.log(dbUnit);
         this.loadCourse();
       })

@@ -18,6 +18,7 @@ const Footer = props => (
                         </div>
                     </div>      
                 </div>
+                <div id="green-line"></div>
     
                 <div className="container" id="lower-footer">
     

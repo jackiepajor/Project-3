@@ -20,7 +20,7 @@ class CourseOverview extends Component {
                 <div className="col-lg-12">
                   {/* <button class="btn text-uppercase" id="catalog-btn">Create a course</button> */}                   
                   <div className id="catalog-search">
-                    <form className="form-inline ml-auto">
+                    <form className="ml-auto" id="formm">
                       <div className="md-form mt-0">
                         <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
                       </div>
