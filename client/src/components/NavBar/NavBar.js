@@ -1,8 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import "./NavBar.css";
 
-const NavBar = props => (
-    <div className="container" id="nav-container">
+class NavBar extends Component {
+
+  logout = () => {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
+
+  render() {
+    return (
+      <div className="container" id="nav-container">
           <nav className="navbar navbar-expand-lg navbar-dark" id="nav">
             <a href="/"><img id="logo" alt="Grasshopper" src={require("./logo-2.png")} /></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +29,7 @@ const NavBar = props => (
                   <div className="dropdown-menu" aria-labelledby="dropdown09" id="dropdown">
                     <a className="dropdown-item" href="/my-courses">My Courses</a>
                     <a className="dropdown-item" href="">Settings</a>
-                    <a className="dropdown-item" href="">Log Out</a>
+                    <a className="dropdown-item" href="" onClick={this.logout}>Log Out</a>
                   </div>
                 </li>
               </ul>
@@ -31,6 +39,9 @@ const NavBar = props => (
           </nav>
         </div>
 
-      );
+    );
+  }
+
+}
 
 export default NavBar;
