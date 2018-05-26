@@ -1,3 +1,39 @@
-h6 {
-    background-color: red;
+.main-content {
+   padding: 20px 50px 20px 0px;
+
+}
+
+#page {
+    background-color: rgba(255, 255, 255, 0.603);
+    width: 75%;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    border-radius: 25px;
+}
+
+.creator-btn {
+    color: white!important;
+}
+
+.react-link {
+    color:white;
+    text-decoration: none!important;
+}
+
+.react-link:hover {
+    text-decoration: none!important;
+    color: white;
+}
+
+.h5-txt {
+    color: rgb(65, 65, 65);
+}
+
+.unit-name {
+    font-size: 25px;
+}
+
+.lesson-name {
+    float: right;
 }

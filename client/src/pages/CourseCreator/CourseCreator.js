@@ -39,21 +39,7 @@ class CourseCreator extends Component {
             {title: "lol"},
             {title: "haha"}
           ]
-        },
-        {
-          _id: "1",
-          name: "Loud reading",
-          lessons: [
-
-          ]
-        },
-        {
-          _id: "14",
-          name: "Loud reading",
-          lessons: [
-
-          ]
-        },
+        }
 
       ]
     }
@@ -90,11 +76,13 @@ class CourseCreator extends Component {
   render() {
     return (
         <div id="bg" className="primary-layout">
-          <Switch>
-            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course}/>} />} />
-            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson}/>} />
-            <Redirect to="/" />
-          </Switch>
+          {/* <div className="container" id="main-content"> */}
+            <Switch>
+              <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course}/>} />} />
+              <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson}/>} />
+              <Redirect to="/" />
+            </Switch>
+          {/* </div> */}
         </div>
     );
   }

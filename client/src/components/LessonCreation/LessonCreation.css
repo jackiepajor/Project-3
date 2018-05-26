@@ -1,12 +1,12 @@
 
 .main-content {
-    height: 1000px;
+    height: 100%;
     width: 100%;
     position: relative;
     top: 0;
     margin-top: -100px;
-    background:linear-gradient(#28423e, 
-    #4bc362);
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
   }
   
   .jumbotron {
@@ -43,4 +43,3 @@
   .file {
     height: 50px;
   }
- 

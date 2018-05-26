@@ -45,8 +45,8 @@ body {
   position: relative;
   top: 0;
   margin: -100px 0px -10px 0px;
-  background:linear-gradient(#28423e, 
-  #4bc362);
+  /* background:linear-gradient(#28423e, 
+  #4bc362); */
 }
 
 #main-content {
