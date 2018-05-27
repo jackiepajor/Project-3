@@ -1,12 +1,11 @@
-var mongoose = require("mongoose");
-
-
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 CategorySchema = new Schema({
-    // _id:         {type: ObjectId},
-    title:       {type: String, ref:"Course"},
-
-
+    title: {
+        type: String
+    }
 });
-var Category = mongoose.model('Category', CategorySchema);//add
+const Category = mongoose.model('Category', CategorySchema);
+
+module.exports = Category;

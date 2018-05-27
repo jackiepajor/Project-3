@@ -9,7 +9,7 @@ router.route("/")
   .get(lessonController.getLessons)
   .post(lessonController.createLesson);
 
-router.route("/:id")
+router.route("/:lesson_id")
   .get(lessonController.getLesson)
   .put(lessonController.updateLesson)
   .delete(lessonController.deleteLesson);

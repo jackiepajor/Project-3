@@ -9,6 +9,8 @@ module.exports = {
   getCourses: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.find({})
+        .populate("units")
+        .populate("lessons")
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -24,7 +26,9 @@ module.exports = {
       let newCourse = new Course({
         title: req.body.title,
         topic: req.body.topic,
-        synopsis: req.body.synopsis
+        synopsis: req.body.synopsis,
+        category: req.body.category,
+        requirements: req.body.requirements
       });
       db.Course.create(newCourse)
         .then(function(dbCourse) {
@@ -40,6 +44,8 @@ module.exports = {
   getCourse: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.findOne({ _id: req.params.id })
+        .populate("units")
+        .populate("lessons")
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -53,6 +59,8 @@ module.exports = {
   updateCourse: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .populate("units")
+        .populate("lessons")
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -67,7 +75,17 @@ module.exports = {
     // if (req.headers.jwttoken) {
       db.Course.findOneAndRemove({ _id: req.params.id })
         .then(function(dbCourse) {
-          res.json(dbCourse);
+          db.Users.find({},
+            { 
+              $pull: { enrolledcourses: { _id: req.params.course_id } },
+              $pull: { managedcourses: { _id: req.params.course_id } }
+            }
+          ).then(function(dbUser) {
+            res.json(dbCourse);
+          })
+          .catch(function(err) {
+            res.json("Error message: " + err);
+          });  
         })
         .catch(function(err) {
           res.json("Error message: " + err);

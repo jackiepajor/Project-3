@@ -29,7 +29,13 @@ module.exports = {
       });
       db.Lesson.create(newLesson)
         .then(function(dbLesson) {
-          res.json(dbLesson);
+          db.Unit.findOneAndUpdate({ _id: req.params.unit_id }, 
+            { $push: { lessons: dbLesson._id } }, 
+            { new: true })
+            .then(function() {
+              res.json(dbLesson);
+            })
+            .catch(function(err) {});
         })
         .catch(function(err) {
           res.json("Error message: " + err);
@@ -68,7 +74,14 @@ module.exports = {
     // if (req.headers.jwttoken) {
       db.Lesson.findOneAndRemove({ _id: req.params.id })
         .then(function(dbLesson) {
-          res.json(dbLesson);
+          db.Unit.findOneAndUpdate({ _id: req.params.unit_id },
+            { $pull: { lessons: { _id: req.params.lesson_id } } }
+          ).then(function(dbUnit) {
+            res.json(dbLesson);
+          })
+          .catch(function(err) {
+            res.json("Error message: " + err);
+          });  
         })
         .catch(function(err) {
           res.json("Error message: " + err);

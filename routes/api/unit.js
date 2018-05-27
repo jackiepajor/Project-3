@@ -9,7 +9,7 @@ router.route("/")
   .get(unitController.getUnits)
   .post(unitController.createUnit);
 
-router.route("/:id")
+router.route("/:unit_id")
   .get(unitController.getUnit)
   .put(unitController.updateUnit)
   .delete(unitController.deleteUnit);

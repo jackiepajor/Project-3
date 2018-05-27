@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { Container, Row, Col } from "../../components/Grid";
 import CourseCreatorInterface from "../../components/CourseCreatorInterface";
 import CourseCreation from "../../components/CourseCreation";
@@ -11,69 +10,56 @@ import API from "../../utils/API";
 import "./CourseCreator.css";
 
 class CourseCreator extends Component {
-  state = {
-    course: {
-      units: [
-        {
-          _id: "434",
-          name: "Reading out loud",
-          lessons: [
-            {title: "foo"},
-            {title: "bar"},
-            {title: "foo_bar"}
-          ]
-        },
-        {
-          _id: "4",
-          name: "Reading out silent",
-          lessons: [
-            {title: "blarg"},
-            {title: "blargy"},
-            {title: "blargument"}
-          ]
-        },
-        {
-          _id: "34",
-          name: "Reading illeteracy",
-          lessons: [
-            {title: "lol"},
-            {title: "haha"}
-          ]
-        }
-
-      ]
-    }
-  };
+  state = {};
 
   componentWillMount() {
     // if we are modifying an existing course; load in the data and populate state
     const action = this.props.match.params.action;
     if (action === "modify") {
       const courseId = this.props.match.params.course_id;
-      
     }
 
+    if (!this.state.categories) {
+      this.loadCategories();
+    }
     this.loadCourse();
-    // window.changeComponentState = (stateObject) => {
-    //   this.setState ({stateObject});
-    // }
+  }
+
+  loadCategories() {
+    API.getCategories()
+      .then(res => {
+        this.setState( {categories: res.data} );
+      })
+      .catch(err => console.log(err));
   }
 
   loadCourse() {
-    API.getCourse(this.state.course._id)
-      .then(res => {
-        this.setState({course: res.data});
-      })
-      .catch(err => console.log(err));
+    let self = this;
+    if (this.state.course) {
+      API.getCourse(this.state.course._id)
+        .then(res => {
+          //this.setState( {course: res.data} );
+          self.setState( {course: res.data} );
+        })
+        .catch(err => console.log(err));
+    } else if (window.sessionStorage.course_id) {
+      // if session reloaded grab the course id
+      API.getCourse(window.sessionStorage.course_id)
+        .then(res => {
+          //this.setState( {course: res.data} );
+          self.setState( {course: res.data} );
+        })
+        .catch(err => console.log(err));
+    }
   };
 
-  handleAddCourse(data) {
-    API.createCourse(data)
-      .then(function(dbCourse) {
-        //add logic 
-        console.log(dbCourse);
-      })
-      .catch(err => console.log(err));
+  handleAddCourse(course) {
+    try {
+      this.setState({ "course": course });
+      //this.setState({ "course": course });
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   handleAddUnit(course_id, data) {
@@ -99,7 +85,7 @@ class CourseCreator extends Component {
     return (
         <div id="bg" className="primary-layout">
           <Switch>
-            <Route exact path="/course-creator/:action/course" component={() => <NewCourse location={this.props.location} handleAddCourse={this.handleAddCourse} />} />
+            <Route exact path="/course-creator/:action/course" component={() => <NewCourse location={this.props.location} handleAddCourse={this.handleAddCourse.bind(this)} categories={this.state.categories} course={this.state.course}/>} />
             <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course} />} />
             <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson} />} />
             <Redirect to="/" />
@@ -109,4 +95,4 @@ class CourseCreator extends Component {
   }
 }
 
-export default CourseCreator;
+export default withRouter(CourseCreator);
