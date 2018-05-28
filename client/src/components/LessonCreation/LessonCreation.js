@@ -1,5 +1,5 @@
 import React from "react";
-import { Link,  matchPath } from "react-router-dom";
+import { Link, matchPath, withRouter } from "react-router-dom";
 import "./LessonCreation.css";
 
 let routeParams = {};
@@ -62,4 +62,4 @@ const LessonCreation = props => {
   );
 };
 
-export default LessonCreation;
+export default withRouter(LessonCreation);

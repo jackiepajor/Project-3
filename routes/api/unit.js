@@ -11,6 +11,7 @@ router.route("/")
 
 router.route("/:unit_id")
   .get(unitController.getUnit)
+  .post(unitController.createUnit)
   .put(unitController.updateUnit)
   .delete(unitController.deleteUnit);
 

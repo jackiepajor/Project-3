@@ -64,7 +64,7 @@ class NewCourse extends React.Component {
         <div className="container white-txt">
           <h3 className="display-3"><strong>Course Creator</strong></h3>
           <hr />
-          <blockquote><strong>How to </strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere temporibus mollitia eos ipsa dolore amet laboriosam distinctio. Non quidem tenetur a, rem aperiam exercitationem laborum ratione illum atque? Tempora mollitia ratione recusandae quo explicabo officiis dolores deleniti natus sunt aspernatur.</blockquote>
+          <blockquote><strong>How to: </strong>Provide a course name, description, and a list of requirements.</blockquote>
           <hr />
         </div>
 
@@ -112,7 +112,6 @@ class NewCourse extends React.Component {
           <br />
           <div className="container">
             <button type="button" className="btn btn-hopper btn-course btn-lg" onClick={() => this.createCourse(this.props)}>Create Course</button>
-            {/* <a href={`/course-creator/create/course/${this.props.course._id}`}><button type="button" className="btn btn-hopper btn-course btn-lg" onClick={() => this.createCourse(this.props)}>Create Course</button></a> */}
           </div>
         </div>
       </div>

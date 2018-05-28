@@ -20,8 +20,6 @@ var UnitSchema = new Schema ({
     }]
 });
 
-
-
 var Unit = mongoose.model("Unit", UnitSchema);
 
 // Export the Unit model

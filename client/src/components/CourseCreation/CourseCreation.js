@@ -5,6 +5,13 @@ import "./CourseCreation.css";
 
 let routeParams = {};
 
+const addUnit = (props) => {
+  const newUnit = {};
+  newUnit.name = document.getElementById("add-unit-input").innerText;
+  newUnit.lessons = [];
+  props.handleAddUnit(props.course._id, newUnit);
+};
+
 const renderLessons = lessons => {
   return (
       <div className="container inner-content">
@@ -53,7 +60,23 @@ const renderUnits = props => {
                     </div>
                   
                   {/* Render all sub lessons for the current unit */}
-                  {renderLessons(unit.lessons)}
+                  {
+                    <div className="container inner-content">
+                      <List>
+                        {
+                          unit.lessons ? unit.lessons.map((lesson, index) => (
+                            <ListItem
+                              key={lesson._id}>
+                              <h6><strong>Lesson <span className="lesson-number">{index + 1}</span> <span className="lesson-name">{lesson.title}</span></strong></h6>
+                            </ListItem>
+                          )) : null
+                        }
+                        <ListItem>
+                          <button className="btn btn-hopper creator-btn"><Link className="react-link" to="/course-creator/:action/course/:course_id/unit/:unit_id/lesson">Add Lesson</Link></button>
+                        </ListItem>
+                      </List>
+                    </div>
+                  }
                   </div>
                 </ListItem>
               </div>
@@ -62,8 +85,8 @@ const renderUnits = props => {
           }
           <ListItem>
             <div className="container new-unit">
-            <h5 contentEditable="true" className="add-unit-item">Add Unit Title...</h5>
-            <button className="btn btn-hopper creator-btn" onClick={props.handleAddUnit}>Add Unit</button>
+              <h5 contentEditable="true" id="add-unit-input" className="add-unit-item">Add Unit Title...</h5>
+              <button className="btn btn-hopper creator-btn" onClick={() => addUnit(props)}>Add Unit</button>
             </div>
           </ListItem>
         </List>

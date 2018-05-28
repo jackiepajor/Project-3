@@ -32,8 +32,8 @@ const category = require("./routes/api/category");
 
 app.use('/api/auth', auth);
 app.use('/api/course', course);
-app.use('/api/unit', unit);
-app.use('/api/lesson', lesson);
+app.use('/api/course/:course_id/unit', unit);
+app.use('/api/course/:course_id/unit/:unit_id/lesson', lesson);
 app.use('/api/category', category);
 
 app.use(function(req, res, next) {

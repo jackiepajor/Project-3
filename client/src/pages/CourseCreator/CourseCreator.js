@@ -66,8 +66,8 @@ class CourseCreator extends Component {
     API.createUnit(course_id, data)
       .then(function(dbUnit) {
         //add logic
-        console.log(dbUnit);
         this.loadCourse();
+        console.log(dbUnit.data);
       })
       .catch(err => console.log(err));
   }
@@ -75,8 +75,8 @@ class CourseCreator extends Component {
   handleAddLesson(course_id, unit_id, data) {
     API.createLesson(course_id, unit_id, data)
       .then(function(dbLesson) {
-        console.log(dbLesson);
         this.loadCourse();
+        console.log(dbLesson);
       })
       .catch(err => console.log(err));
   }
@@ -86,8 +86,8 @@ class CourseCreator extends Component {
         <div id="bg" className="primary-layout">
           <Switch>
             <Route exact path="/course-creator/:action/course" component={() => <NewCourse location={this.props.location} handleAddCourse={this.handleAddCourse.bind(this)} categories={this.state.categories} course={this.state.course}/>} />
-            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit} course={this.state.course} />} />
-            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson} />} />
+            <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit.bind(this)} course={this.state.course} />} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson.bind(this)} />} />
             <Redirect to="/" />
           </Switch>
         </div>

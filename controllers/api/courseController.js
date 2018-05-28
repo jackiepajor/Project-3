@@ -43,7 +43,7 @@ module.exports = {
   },
   getCourse: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Course.findOne({ _id: req.params.id })
+      db.Course.findOne({ _id: req.params.course_id })
         .populate("units")
         .populate("lessons")
         .then(function(dbCourse) {
@@ -58,7 +58,7 @@ module.exports = {
   },
   updateCourse: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Course.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+      db.Course.findOneAndUpdate({ _id: req.params.course_id }, req.body, { new: true })
         .populate("units")
         .populate("lessons")
         .then(function(dbCourse) {
@@ -73,7 +73,7 @@ module.exports = {
   },
   deleteCourse: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Course.findOneAndRemove({ _id: req.params.id })
+      db.Course.findOneAndRemove({ _id: req.params.course_id })
         .then(function(dbCourse) {
           db.Users.find({},
             { 

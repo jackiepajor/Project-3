@@ -19,6 +19,10 @@ var CourseSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Category"
     },
+    author: [{
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }],
     units: [{
         type: Schema.Types.ObjectId,
         ref: "Unit"
