@@ -17,7 +17,11 @@ var UnitSchema = new Schema ({
     lessons: [{
         type: Schema.Types.ObjectId,
         ref: "Lesson"
-    }]
+    }],
+    created: {
+        type: Date, 
+        default: Date.now 
+    }
 });
 
 var Unit = mongoose.model("Unit", UnitSchema);

@@ -26,8 +26,11 @@ var CourseSchema = new Schema({
     units: [{
         type: Schema.Types.ObjectId,
         ref: "Unit"
-      }]
-});
+    }],
+    created: {
+        type: Date, 
+        default: Date.now 
+    }});
 // This creates our model from the above schema, using mongoose's model method
 var Course = mongoose.model("Course", CourseSchema);
 

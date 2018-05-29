@@ -52,7 +52,6 @@ class NewCourse extends React.Component {
           props.handleAddCourse(course);
         })
         .catch(err => console.log(err));
-      //props.handleAddCourse(newCourse);
     }
   }
 

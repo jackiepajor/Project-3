@@ -1,9 +1,15 @@
 import React from "react";
-import { Link,  matchPath } from "react-router-dom";
+import { Link,  matchPath, withRouter } from "react-router-dom";
 import { List, ListItem} from "../List";
 import "./CourseCreation.css";
 
 let routeParams = {};
+
+const routeToLessonCreate = (e, props) => {
+  e.preventDefault();
+  let unit_id = e.target.getAttribute("data-unit-id");
+  props.history.push(`/course-creator/create/course/${routeParams.course_id}/unit/${unit_id}/lesson`);
+};
 
 const addUnit = (props) => {
   const newUnit = {};
@@ -11,26 +17,6 @@ const addUnit = (props) => {
   newUnit.lessons = [];
   props.handleAddUnit(props.course._id, newUnit);
 };
-
-const renderLessons = lessons => {
-  return (
-      <div className="container inner-content">
-        <List>
-          {
-            lessons ? lessons.map((lesson, index) => (
-              <ListItem
-                key={lesson._id}>
-                <h6><strong>Lesson <span className="lesson-number">{index + 1}</span> <span className="lesson-name">{lesson.title}</span></strong></h6>
-              </ListItem>
-            )) : null
-          }
-          <ListItem>
-            <button className="btn btn-hopper creator-btn"><Link className="react-link" to="/course-creator/:action/course/:course_id/unit/:unit_id/lesson">Add Lesson</Link></button>
-          </ListItem>
-        </List>
-      </div>
-  );
-}
 
 const renderUnits = props => {
   let unitIndex = 1;
@@ -72,7 +58,7 @@ const renderUnits = props => {
                           )) : null
                         }
                         <ListItem>
-                          <button className="btn btn-hopper creator-btn"><Link className="react-link" to="/course-creator/:action/course/:course_id/unit/:unit_id/lesson">Add Lesson</Link></button>
+                          <button className="btn btn-hopper creator-btn" data-unit-id={unit._id} onClick={(e) => routeToLessonCreate(e, props)}>Add Lesson</button>
                         </ListItem>
                       </List>
                     </div>
@@ -111,4 +97,4 @@ const CourseCreation = props => {
   );
 };
 
-export default CourseCreation;
+export default withRouter(CourseCreation);

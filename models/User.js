@@ -19,7 +19,11 @@ var UserSchema = new Schema({
     enrolledcourses: [{
         type: Schema.Types.ObjectId,
         ref: "Course"
-    }]
+    }],
+    created: {
+        type: Date, 
+        default: Date.now 
+    }
 
     // name: {
     //     type: String
