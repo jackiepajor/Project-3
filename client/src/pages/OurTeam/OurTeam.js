@@ -14,75 +14,111 @@ class OurTeam extends Component {
       <div id="content">
         <div className="container" id="main-content">
 
-          <div className="container" id="idk">
-            <div className="row" >
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h2 className="header white-txt text-center display-2">Meet The Team</h2>
+            </div>
+          </div>
 
+          {/* Ethan */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
 
-              {/* Left Side */}
-              <div className="col-lg-6">
-                <div className="row">
-                  <h3 className="display-4 white-txt text-center" ><strong className="header">Meet The Team</strong></h3>
-                </div>
+          {/* Garvey */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
 
-                {/* profile */}
-                <div className="row text-right team">
-                  <div className="col-sm-6">
-                    <h3 className="white-txt">Ethan Rogers</h3>
-                    <h5>Beer Pong Champion</h5>
-                  </div>
-                  <div className="col-sm-6 text-center media-links">
-                    <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-                {/* ///profile */}
+          {/* George */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
 
-                {/* profile */}
-                <div className="row text-right team">
-                  <div className="col-sm-6">
-                    <h3 className="white-txt">Jaclyn Pajor</h3>
-                    <h5>Rich af</h5>
-                  </div>
-                  <div className="col-sm-6 text-center media-links">
-                    <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-                {/* ///profile */}
-
-                {/* profile */}
-                <div className="row text-right team">
-                  <div className="col-sm-6">
-                    <h3 className="white-txt">Kurtis Carpenter</h3>
-                    <h5>AKA Madison</h5>
-                  </div>
-                  <div className="col-sm-6 text-center media-links">
-                    <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-                    <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-                {/* ///profile */}
-
-              </div>
-              {/* ///Left Side */}
-
-              {/* Right Side */}
-              <div className="col-lg-6">
-                <div className="row">
-                  <h3 className="display-4 white-txt" ><strong className="header">Updates</strong></h3>
-                </div>
-              </div>
-              {/* ///Right Side */}
-              
+          {/* Elena */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
             </div>
           </div>
 
 
-            
+          {/* Jesse */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
 
+
+          {/* Jacyln */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+
+
+          {/* Kurist */}
+          <div className="row profile">
+            <div className="col-lg-6 white-txt text-center">
+              <h3 className="">John Doe</h3>
+              <h5>Developer</h5>
+            </div>
+            <div className="col-lg-6 text-center"><br />
+              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          
+
+
+        </div>
 
         </div>
       </div>

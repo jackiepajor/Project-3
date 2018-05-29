@@ -12,8 +12,13 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="jumbotron jumbotron-fluid" id="main-jumbo">
-        
+      <div>
+        <div className="jumbotron jumbotron-fluid" id="main-jumbo">
+          
+        </div>
+        <div className="container">
+          
+        </div>
       </div>
     );
   }
