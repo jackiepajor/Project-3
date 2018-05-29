@@ -1,68 +1,83 @@
 import React from "react";
-import { Link,  matchPath } from "react-router-dom";
+import { Link,  matchPath, withRouter } from "react-router-dom";
 import { List, ListItem} from "../List";
 import "./CourseCreation.css";
 
 let routeParams = {};
 
-const renderLessons = lessons => {
-  return (
-      <div className="container inner-content">
-      <List>
-        {
-          lessons.map((lesson, index) => (
-            <ListItem
-              key={lesson._id}>
-              <h6><strong>Lesson <span className="lesson-number">{index + 1}</span> <span className="lesson-name">{lesson.title}</span></strong></h6>
-            </ListItem>
-          ))
-        }
-        <ListItem>
-          <button className="btn btn-hopper creator-btn"><Link className="react-link" to="/course-creator/:action/course/:course_id/unit/:unit_id/lesson">Add Lesson</Link></button>
-        </ListItem>
-      </List>
-      </div>
-    
-  );
-}
+const routeToLessonCreate = (e, props) => {
+  e.preventDefault();
+  let unit_id = e.target.getAttribute("data-unit-id");
+  props.history.push(`/course-creator/create/course/${routeParams.course_id}/unit/${unit_id}/lesson`);
+};
+
+const addUnit = (props) => {
+  const newUnit = {};
+  newUnit.name = document.getElementById("add-unit-input").innerText;
+  newUnit.lessons = [];
+  props.handleAddUnit(props.course._id, newUnit);
+};
 
 const renderUnits = props => {
   let unitIndex = 1;
-  const units = props.course.units;
+  const units = props.course ? props.course.units : null;
   return (
     <div id="page">
-    <div className="container  main-content">
-    <List>
-      {
-        units.map((unit, index) => (
-          <div className="container">
-          <ListItem key={unit._id}>
-            <div className="row">
-              <div className="col-sm-6">
-                <h5 className="h5-txt"><strong>Unit <span className="unit-number">{index + 1}</span></strong></h5 > 
+      <div className="container  main-content">
+        {
+          props.course ? (
+            <div>
+              <h5 id="course-title">Course Title: {props.course.title ? props.course.title : ""}</h5>
+              <h5 id="course-description"> Course Synopsis: {props.course.synopsis ? props.course.synopsis : ""}</h5>
+            </div>
+          ) : null
+        }
+        <List>
+          {
+            units ? units.map((unit, index) => (
+              <div className="container">
+                <ListItem key={unit._id}>
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <h5 className="h5-txt"><strong>Unit <span className="unit-number">{index + 1}</span></strong></h5 > 
+                    </div>
+                    <div className="col-sm-6 text-right">
+                    <h5 className="h5-txt">  <span className="unit-name">{unit.name}</span></h5>
+                    </div>
+                  
+                  {/* Render all sub lessons for the current unit */}
+                  {
+                    <div className="container inner-content">
+                      <List>
+                        {
+                          unit.lessons ? unit.lessons.map((lesson, index) => (
+                            <ListItem
+                              key={lesson._id}>
+                              <h6><strong>Lesson <span className="lesson-number">{index + 1}</span> <span className="lesson-name">{lesson.title}</span></strong></h6>
+                            </ListItem>
+                          )) : null
+                        }
+                        <ListItem>
+                          <button className="btn btn-hopper creator-btn" data-unit-id={unit._id} onClick={(e) => routeToLessonCreate(e, props)}>Add Lesson</button>
+                        </ListItem>
+                      </List>
+                    </div>
+                  }
+                  </div>
+                </ListItem>
               </div>
-              <div className="col-sm-6 text-right">
-              <h5 className="h5-txt">  <span className="unit-name">{unit.name}</span></h5>
-              </div>
-            
-            {/* Render all sub lessons for the current unit */}
-            {renderLessons(unit.lessons)}
+            )) 
+            : null
+          }
+          <ListItem>
+            <div className="container new-unit">
+              <h5 contentEditable="true" id="add-unit-input" className="add-unit-item">Add Unit Title...</h5>
+              <button className="btn btn-hopper creator-btn" onClick={() => addUnit(props)}>Add Unit</button>
             </div>
           </ListItem>
-          </div>
-        ))
-      }
-      <ListItem>
-        <div className="container new-unit">
-        <h5 contentEditable="true" className="add-unit-item">Add Unit Title...</h5>
-        <button className="btn btn-hopper creator-btn" onClick={props.handleAddUnit}>Add Unit</button>
-        </div>
-      </ListItem>
-    </List>
+        </List>
+      </div>
     </div>
-    </div>
-
-    
   );
 };
 
@@ -82,4 +97,4 @@ const CourseCreation = props => {
   );
 };
 
-export default CourseCreation;
+export default withRouter(CourseCreation);

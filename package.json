@@ -19,6 +19,7 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.245.1",
     "axios": "^0.16.2",
     "bcrypt-nodejs": "^0.0.3",
     "bluebird": "^3.5.1",

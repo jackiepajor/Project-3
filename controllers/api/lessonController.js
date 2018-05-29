@@ -29,7 +29,14 @@ module.exports = {
       });
       db.Lesson.create(newLesson)
         .then(function(dbLesson) {
-          res.json(dbLesson);
+          db.Unit.findOneAndUpdate(
+            { _id: req.params.unit_id }, 
+            { $push: { lessons: dbLesson._id } }, 
+            { new: true })
+            .then(function() {
+              res.json(dbLesson);
+            })
+            .catch(function(err) {});
         })
         .catch(function(err) {
           res.json("Error message: " + err);
@@ -40,7 +47,7 @@ module.exports = {
   },
   getLesson: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Lesson.findOne({ _id: req.params.id })
+      db.Lesson.findOne({ _id: req.params.lesson_id })
         .then(function(dbLesson) {
           res.json(dbLesson);
         })
@@ -53,7 +60,7 @@ module.exports = {
   },
   updateLesson: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Lesson.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+      db.Lesson.findOneAndUpdate({ _id: req.params.lesson_id }, req.body, { new: true })
         .then(function(dbLesson) {
           res.json(dbLesson);
         })
@@ -66,9 +73,16 @@ module.exports = {
   },
   deleteLesson: function(req, res) {
     // if (req.headers.jwttoken) {
-      db.Lesson.findOneAndRemove({ _id: req.params.id })
+      db.Lesson.findOneAndRemove({ _id: req.params.lesson_id })
         .then(function(dbLesson) {
-          res.json(dbLesson);
+          db.Unit.findOneAndUpdate({ _id: req.params.unit_id },
+            { $pull: { lessons: { _id: req.params.lesson_id } } }
+          ).then(function(dbUnit) {
+            res.json(dbLesson);
+          })
+          .catch(function(err) {
+            res.json("Error message: " + err);
+          });  
         })
         .catch(function(err) {
           res.json("Error message: " + err);

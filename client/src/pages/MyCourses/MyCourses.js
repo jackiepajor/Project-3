@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import { Container, Row, Col } from "../../components/Grid";
 import "./MyCourse.css";
@@ -8,7 +9,6 @@ class MyCourses extends Component {
 
   };
 
- 
   render() {
     return (
       <div>
@@ -254,7 +254,7 @@ class MyCourses extends Component {
           <div className="container" id="btn-area">
             <div className="row">
               <div className="col-md-12 text-center">
-                <a href="/course-creator"><button className="btn btn-nav" id="new-btn">New Course</button></a>
+                <Link to="/course-creator/create/course"><button className="btn btn-nav" id="new-btn">New Course</button></Link>
               </div>
             </div>
           </div>

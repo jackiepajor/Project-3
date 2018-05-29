@@ -24,19 +24,17 @@ app.use(express.static("client/build"));
 
 app.use(logger("dev"));
 
-// const book = require("./routes/book");
-
 const auth = require("./routes/auth/auth");
 const course = require("./routes/api/course");
 const unit = require("./routes/api/unit");
 const lesson = require("./routes/api/lesson");
-
-// app.use('/api/book', book);
+const category = require("./routes/api/category");
 
 app.use('/api/auth', auth);
 app.use('/api/course', course);
-app.use('/api/unit', unit);
-app.use('/api/lesson', lesson);
+app.use('/api/course/:course_id/unit', unit);
+app.use('/api/course/:course_id/unit/:unit_id/lesson', lesson);
+app.use('/api/category', category);
 
 app.use(function(req, res, next) {
   var err = new Error("Not Found");

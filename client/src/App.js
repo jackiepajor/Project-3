@@ -17,7 +17,6 @@ import ViewCourses from "./pages/ViewCourses";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
 
-
 const renderNavButtons = () => {
   let path = window.location.pathname;
   switch(path) {

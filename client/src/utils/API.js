@@ -51,5 +51,10 @@ export default {
   },
   updateLesson: function(courseId, unitId, lessonId, data) {
     return axios.put(`/api/course/${courseId}/unit/${unitId}/lesson/${lessonId}`, data);
+  },
+
+  // Category routes
+  getCategories: function() {
+    return axios.get("/api/category");
   }
 };

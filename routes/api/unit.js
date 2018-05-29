@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("express").Router({mergeParams: true});
 const passport = require('passport');
 const settings = require('../../config/settings');
 require('../../config/passport')(passport);
@@ -9,8 +9,9 @@ router.route("/")
   .get(unitController.getUnits)
   .post(unitController.createUnit);
 
-router.route("/:id")
+router.route("/:unit_id")
   .get(unitController.getUnit)
+  .post(unitController.createUnit)
   .put(unitController.updateUnit)
   .delete(unitController.deleteUnit);
 

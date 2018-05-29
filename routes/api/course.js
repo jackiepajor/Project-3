@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("express").Router({mergeParams: true});
 const passport = require("passport");
 const settings = require("../../config/settings");
 require("../../config/passport")(passport);
@@ -9,7 +9,7 @@ router.route("/")
   .get(courseController.getCourses)
   .post(courseController.createCourse);
 
-router.route("/:id")
+router.route("/:course_id")
   .get(courseController.getCourse)
   .put(courseController.updateCourse)
   .delete(courseController.deleteCourse);

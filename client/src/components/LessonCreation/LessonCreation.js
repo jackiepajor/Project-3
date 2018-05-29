@@ -1,18 +1,25 @@
 import React from "react";
-import { Link,  matchPath } from "react-router-dom";
+import { Link, matchPath, withRouter } from "react-router-dom";
 import "./LessonCreation.css";
 
 let routeParams = {};
 
+const addLesson = (props) => {
+  const newLesson = {};
+  newLesson.title = document.getElementById("lesson-title").innerText;
+  newLesson.description = document.getElementById("lesson-description").innerText;
+  props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
+};
+
 const parseParams = (location) => {
   const matchProfile = matchPath(location, {
-    path: `/course-creator/:action/course/:course_id/unit/:unit_id/lesson/:lesson_id`,
+    path: `/course-creator/:action/course/:course_id/unit/:unit_id/lesson/`,
   });
   return (matchProfile && matchProfile.params) || {};
 };
 
 const LessonCreation = props => {
-    routeParams = parseParams(props.location);
+    routeParams = parseParams(props.location.pathname);
     return (
       <div className="main-content">
       <br /><br /><br /><br /><br /><br />
@@ -28,12 +35,12 @@ const LessonCreation = props => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h4 className="display-3" contentEditable="true">Add Lesson Title...</h4>
+              <h4 className="display-3" id="lesson-title" contentEditable="true">Add Lesson Title...</h4>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <p contentEditable="true">Add Description...</p>
+              <p id="lesson-description" contentEditable="true">Add Description...</p>
             </div>
           </div>
         </div>
@@ -55,11 +62,11 @@ const LessonCreation = props => {
         </div>
         <br />
         <div className="container">
-          <button type="button" className="btn btn-hopper btn-course btn-lg" onClick={props.handleAddLesson}>Create Lesson</button>
+          <button type="button" className="btn btn-hopper btn-course btn-lg" onClick={() => addLesson(props)}>Create Lesson</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default LessonCreation;
+export default withRouter(LessonCreation);
