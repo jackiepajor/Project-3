@@ -9,8 +9,13 @@ module.exports = {
   getCourses: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.find({})
-        .populate("units")
-        .populate("lessons")
+        .populate({ 
+          path: 'units',
+          populate: {
+            path: 'lessons',
+            model: 'Lesson'
+          }
+        })
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -44,8 +49,13 @@ module.exports = {
   getCourse: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.findOne({ _id: req.params.course_id })
-        .populate("units")
-        .populate("lessons")
+        .populate({ 
+          path: 'units',
+          populate: {
+            path: 'lessons',
+            model: 'Lesson'
+          } 
+        })
         .then(function(dbCourse) {
           res.json(dbCourse);
         })
@@ -59,8 +69,13 @@ module.exports = {
   updateCourse: function(req, res) {
     // if (req.headers.jwttoken) {
       db.Course.findOneAndUpdate({ _id: req.params.course_id }, req.body, { new: true })
-        .populate("units")
-        .populate("lessons")
+        .populate({ 
+          path: 'units',
+          populate: {
+            path: 'lessons',
+            model: 'Lesson'
+          } 
+        })
         .then(function(dbCourse) {
           res.json(dbCourse);
         })

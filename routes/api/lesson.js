@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("express").Router({mergeParams: true});
 const passport = require('passport');
 const settings = require('../../config/settings');
 require('../../config/passport')(passport);

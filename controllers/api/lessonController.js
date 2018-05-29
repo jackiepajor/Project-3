@@ -29,7 +29,8 @@ module.exports = {
       });
       db.Lesson.create(newLesson)
         .then(function(dbLesson) {
-          db.Unit.findOneAndUpdate({ _id: req.params.unit_id }, 
+          db.Unit.findOneAndUpdate(
+            { _id: req.params.unit_id }, 
             { $push: { lessons: dbLesson._id } }, 
             { new: true })
             .then(function() {
