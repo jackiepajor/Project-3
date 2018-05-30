@@ -86,3 +86,10 @@
   input:focus:-moz-placeholder { color:transparent !important; } /* Firefox 18- */
   input:focus::-moz-placeholder { color:transparent !important; } /* Firefox 19+ */
   input:focus:-ms-input-placeholder { color:transparent !important; } /* oldIE ;) */
+  #file-upload {
+    display: block;
+  }
+
+  #edit-container {
+    display: block;
+  }

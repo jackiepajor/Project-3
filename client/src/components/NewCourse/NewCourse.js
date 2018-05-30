@@ -100,12 +100,7 @@ class NewCourse extends React.Component {
                     {this.renderCourseCategories(this.props)}
                   </select>
                 </div>
-                <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                    <button className="btn btn-hopper" type="button">Add</button>
-                  </div>
-                  <input type="text" className="form-control" placeholder="Course Requirements" aria-label aria-describedby="basic-addon1" />
-                </div>
+
               </div>
             </div>
           </div>
