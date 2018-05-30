@@ -20,8 +20,8 @@ class NewCourse extends React.Component {
     // grab selected category
     const selectElement = document.getElementById("category-dropdown");
     const selectedCategory = selectElement.options[selectElement.selectedIndex].value;
-    const title = document.getElementById("course-title").textContent;
-    const description = document.getElementById("course-description").textContent;
+    const title = document.getElementById("course-title").value;
+    const description = document.getElementById("course-description").value;
 
     if (selectedCategory !== 'Course Category') {
       // grab all requirements
@@ -60,23 +60,24 @@ class NewCourse extends React.Component {
       <div className="main-content">
         <br /><br /><br /><br /><br /><br />
 
-        <div className="container white-txt">
-          <h3 className="display-3"><strong>Course Creator</strong></h3>
-          <hr />
+        <div className="container white-txt text-center">
+          <h3 className="display-1"><strong>Create Course</strong></h3>
+          {/* <hr />
           <blockquote><strong>How to: </strong>Provide a course name, description, and a list of requirements.</blockquote>
-          <hr />
+          <hr /> */}
         </div>
 
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <h4 id="course-title" className="display-3" contentEditable="true">Add Course Title...</h4>
+                <input type="text" id="course-title" class="form-control" placeholder="Add Course Title..."  />
+                {/* <h4 id="course-title" className="display-3" contentEditable="true" onClick={(e) => e.target.innerHtml = ""} >Add Course Title...</h4> */}
               </div>
             </div>
             <div className="row">
               <div className="col-lg-12">
-                <p id="course-description" contentEditable="true">Add Description...</p>
+                <input id="course-description" type="text" class="form-control" placeholder="Add Description..." ></input>
               </div>
             </div>
           </div>

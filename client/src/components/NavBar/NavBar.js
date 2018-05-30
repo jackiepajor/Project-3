@@ -18,7 +18,7 @@ class NavBar extends Component {
             </button>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto" id="ul">
-                <li className="nav-item active">
+                <li className="nav-item">
                   <a className="nav-link" href="/home">Home</a>
                 </li>
                 <li className="nav-item">

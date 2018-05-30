@@ -16,34 +16,35 @@ import NoMatch from "./pages/NoMatch";
 import ViewCourses from "./pages/ViewCourses";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
+import GetInvolved from "./pages/GetInvolved";
 
-const renderNavButtons = () => {
-  let path = window.location.pathname;
-  switch(path) {
-    case "/":
-    case "/home":
-      return (
-        <button>DYNAMIC</button>
-      );
-      break;
-    case "/login":
-      return (
-        <button>blarg</button>
-      );
-      break;
-    case "/course-creator":
-      // render different buttons on the navbar
-      return (
-        <button>DYNAMIC</button>
-      );
-      break;
-    default:
-      return (
-        <button>You suck LIKE A LOT!!!!</button>
-      )
-      break;
-  }
-};
+// const renderNavButtons = () => {
+//   let path = window.location.pathname;
+//   switch(path) {
+//     case "/":
+//     case "/home":
+//       return (
+//         <button>DYNAMIC</button>
+//       );
+//       break;
+//     case "/login":
+//       return (
+//         <button>blarg</button>
+//       );
+//       break;
+//     case "/course-creator":
+//       // render different buttons on the navbar
+//       return (
+//         <button>DYNAMIC</button>
+//       );
+//       break;
+//     default:
+//       return (
+//         <button>You suck LIKE A LOT!!!!</button>
+//       )
+//       break;
+//   }
+// };
 
 const App = (props) => (
   <Router>
@@ -61,6 +62,7 @@ const App = (props) => (
           <Route exact path="/our-team" component={OurTeam} />
           <Route exact path="/view-course" component={ViewCourses} />
           <Route exact path="/contact-us" component={Form} />
+          <Route exact path="/get-involved" component={GetInvolved} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />

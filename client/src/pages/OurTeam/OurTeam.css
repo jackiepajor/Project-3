@@ -12,12 +12,9 @@
     width: 100%;
 }
 
-#idk {
-   
-}
-
 .header {
-    border-bottom: 4px solid white!important;
+    text-decoration: underline;
+    margin-bottom: 50px;
 }
 
 h5 {
@@ -25,19 +22,6 @@ h5 {
     color: rgb(228, 226, 226);
 }
 
-.media-links {
-    width: 20%;
-   
+.profile {
+    margin: 40px;
 }
-
-.name-title {
-    padding: 0px 0px 0px 90px;
-}
-
-.team {
-    width: 60%;
-    padding: 10px;
-    border-radius: 25px;
-    margin: 10px;
-}
-

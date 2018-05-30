@@ -1,14 +1,17 @@
 // Dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Field = (props) => (
-    <div>
-        <label>{props.label}</label>
-    <input 
-        onChange={props.onChange}
-        type={props.textarea ? 'textarea' : 'text'}
-        value={props.value} />
+    <div className="container">
+        <div className="">
+            <label className="field-label">{props.label}</label>
+        <input type="text" className="field-input"
+            onChange={props.onChange}
+            type={props.textarea ? 'textarea' : 'text'}
+            value={props.value} />
+        </div>
     </div>
 );
 

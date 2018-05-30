@@ -29,6 +29,11 @@
     margin-top: 100px;
   }
 
+#my-courses {
+  border-bottom: 1px solid white;
+  padding-bottom:  10px;
+}
+
 #new-btn {
   width: 45%;
   height: 100px;
