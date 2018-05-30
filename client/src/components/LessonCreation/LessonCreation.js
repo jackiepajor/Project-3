@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, matchPath, withRouter } from "react-router-dom";
+import ReactQuill from 'react-quill';
+import Editor from '../Editor/Editor';
 import "./LessonCreation.css";
+import 'react-quill/dist/quill.snow.css';
 
 let routeParams = {};
 
@@ -8,6 +11,9 @@ const addLesson = (props) => {
   const newLesson = {};
   newLesson.title = document.getElementById("lesson-title").innerText;
   newLesson.description = document.getElementById("lesson-description").innerText;
+  
+  let editorText = document.getElementsByClassName('ql-editor')[0].innerHTML;
+  newLesson.body = editorText;
   props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
 };
 
@@ -56,7 +62,19 @@ const LessonCreation = props => {
                       <input type="file" className="custom-file-input"  />
                       <label className="custom-file-label" for="inputGroupFile03">Choose file</label>
                   </div>
+                    {/* <ReactQuill
+                      placeholder="Start Creating Your Lesson Here..." 
+                      value={props.lessonText}
+                      onChange={(value) => props.handleLessonChange(value)}
+                    /> */}
+                    </div>
               </div>
+              <div id="edit-container">
+                    <Editor 
+                    placeholder="Start Creating Your Lesson Here..." 
+                    value={props.lessonText}
+                    onChange={(value) => props.handleLessonChange(value)}
+                    />
             </div>
           </div>
         </div>
