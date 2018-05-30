@@ -10,7 +10,7 @@ const favicon = require("serve-favicon");
 
 mongoose.Promise = require("bluebird");
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grasshopper", { promiseLibrary: require("bluebird") })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://grasshopper:grasshopper@ds121599.mlab.com:21599/heroku_9lpz081d", { promiseLibrary: require("bluebird") })
   .then(() => console.log("Connection successful"))
   .catch((err) => console.log(err));
 
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grasshopper", {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static("client/build"));
+app.use(express.static(path.join(__dirname, "client", "build")))
 // Add routes, both API and view
 // app.use(routes);
 
@@ -47,6 +47,10 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   res.sendStatus(err.status || 500);
+});
+
+app.get("*", (req, res) => {  
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 // Start the API server
