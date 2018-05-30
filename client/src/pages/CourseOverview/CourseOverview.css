@@ -109,3 +109,6 @@
     color: #426d67;
   }
   
+.course-title {
+  color: currentColor;
+}

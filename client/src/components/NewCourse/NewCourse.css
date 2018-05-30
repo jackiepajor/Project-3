@@ -39,3 +39,50 @@
   #category-dropdown {
     height: 50px;
   }
+
+  h4:focus::before {
+    content: '';
+  }
+
+  #course-title {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    color: currentColor;
+  }
+
+  #course-title:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #course-title::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  #course-description {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: currentColor
+  }
+
+  #course-description:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #course-description::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  input:focus::-webkit-input-placeholder { color:transparent !important; } 
+  input:focus:-moz-placeholder { color:transparent !important; } /* Firefox 18- */
+  input:focus::-moz-placeholder { color:transparent !important; } /* Firefox 19+ */
+  input:focus:-ms-input-placeholder { color:transparent !important; } /* oldIE ;) */

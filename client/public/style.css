@@ -94,12 +94,10 @@ body {
     padding-left: 20px;
   }
   
-  i {
-    padding-right: 50px;
+  .icon-style-2 {
     color: white;
-    font-size: 30px!important;
-  }
-  
-  i:hover {
-    color:#426d67;
-  }
+}
+
+.icon-style-2:hover {
+    color:#4bc362;
+}

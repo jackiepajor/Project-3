@@ -27,8 +27,8 @@ const renderUnits = props => {
         {
           props.course ? (
             <div>
-              <h5 id="course-title">Course Title: {props.course.title ? props.course.title : ""}</h5>
-              <h5 id="course-description"> Course Synopsis: {props.course.synopsis ? props.course.synopsis : ""}</h5>
+              <h5 id="course-title">{props.course.title ? props.course.title : ""}</h5>
+              <h5 id="course-description">{props.course.synopsis ? props.course.synopsis : ""}</h5>
             </div>
           ) : null
         }

@@ -1,0 +1,51 @@
+#content {
+    height:100%!important;
+    width: 100%!important;
+    padding-left: 30px;
+    position: relative;
+    top: 0;
+    margin-top: -100px;
+}
+
+#main-content {
+    width: 100%;
+}
+
+#involve-top {
+    color: white;
+}
+
+#gitinvolved{
+    font-size: 50px;
+}
+
+.underline-header {
+   border-bottom: 2px solid #4bc362;
+   padding-bottom: 2px;
+}
+
+
+#react-img {
+    height: 200px;
+}
+
+#bootstrap-img {
+    height: 180px;
+}
+
+#mongodb-img {
+    padding-top: 30px;
+    width: 350px;
+}
+
+#html-img {
+    height: 200px;
+}
+
+#css-img {
+    height: 200px;
+}
+
+#js-img {
+    height: 200px;
+}

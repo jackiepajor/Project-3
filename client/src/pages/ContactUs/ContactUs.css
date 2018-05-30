@@ -11,9 +11,27 @@
 
 #jumbo-field {
     background-color: rgba(255, 255, 255, 0.603);
-    width: 75%;
-    padding: 20px 0px 40px 0px;
+    width: 60%;
+    padding: 30px 0px 30px 0px;
     margin: auto;
     text-align: center;
     border-radius: 25px;
   }
+
+  .field-div {
+
+  }
+
+  .field-input {
+      width: 40%;
+      background-color: white;
+      border: none;
+      border-radius: 25px;
+  }
+
+  .field-label {
+      width: 10%;
+      text-align: right;
+      padding-right: 5px;
+  }
+

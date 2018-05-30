@@ -28,7 +28,7 @@ class OurTeam extends Component {
               <h5>Developer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github "></i></a>
               <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
               <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
             </div>
