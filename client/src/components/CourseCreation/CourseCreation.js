@@ -13,9 +13,11 @@ const routeToLessonCreate = (e, props) => {
 
 const addUnit = (props) => {
   const newUnit = {};
-  newUnit.name = document.getElementById("add-unit-input").innerText;
+  newUnit.name = document.getElementById("add-unit-input").value;
   newUnit.lessons = [];
-  props.handleAddUnit(props.course._id, newUnit);
+  if (newUnit.name !== '') {
+    props.handleAddUnit(props.course._id, newUnit);
+  }
 };
 
 const renderUnits = props => {
@@ -71,7 +73,7 @@ const renderUnits = props => {
           }
           <ListItem>
             <div className="container new-unit">
-              <h5 contentEditable="true" id="add-unit-input" className="add-unit-item">Add Unit Title...</h5>
+              <input type="text" contentEditable="true" id="add-unit-input" className="add-unit-item" placeholder="Add Unit Title..."></input>
               <button className="btn btn-hopper creator-btn" onClick={() => addUnit(props)}>Add Unit</button>
             </div>
           </ListItem>
