@@ -9,20 +9,12 @@ let routeParams = {};
 
 const addLesson = (props) => {
   const newLesson = {};
-<<<<<<< HEAD
   newLesson.title = document.getElementById("lesson-title").value;
   newLesson.description = document.getElementById("lesson-description").value;
-  if (newLesson.title !== '' && newLesson.description !== '') {
-    props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
-  }
-=======
-  newLesson.title = document.getElementById("lesson-title").innerText;
-  newLesson.description = document.getElementById("lesson-description").innerText;
   
   let editorText = document.getElementsByClassName('ql-editor')[0].innerHTML;
   newLesson.body = editorText;
   props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
->>>>>>> 0f043c38a84c9091cbf143104d01ab736ec73f3f
 };
 
 const parseParams = (location) => {
