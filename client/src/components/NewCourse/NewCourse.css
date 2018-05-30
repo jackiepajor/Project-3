@@ -1,0 +1,88 @@
+
+.main-content {
+    width: 100%;
+    margin-bottom: -250px;
+    position: relative;
+    top: 0;
+    margin-top: -100px;
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
+  }
+  
+  .jumbotron {
+    background-color: rgba(255, 255, 255, 0.603);
+    width: 75%;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+    border-radius: 25px;
+  }
+  
+  .btn-course {
+    width: 200px;
+    border-radius: 50px;
+  }
+  
+  .btn-hopper {
+    border-radius: 25px;
+    height: 50px;
+    background-color: #4bc361ef;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .btn-hopper:hover {
+    color:rgba(255, 255, 255, 0.959);
+    background-color: #3a8d4a;
+  }
+  
+  #category-dropdown {
+    height: 50px;
+  }
+
+  h4:focus::before {
+    content: '';
+  }
+
+  #course-title {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    color: currentColor;
+  }
+
+  #course-title:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #course-title::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  #course-description {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: currentColor
+  }
+
+  #course-description:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #course-description::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  input:focus::-webkit-input-placeholder { color:transparent !important; } 
+  input:focus:-moz-placeholder { color:transparent !important; } /* Firefox 18- */
+  input:focus::-moz-placeholder { color:transparent !important; } /* Firefox 19+ */
+  input:focus:-ms-input-placeholder { color:transparent !important; } /* oldIE ;) */

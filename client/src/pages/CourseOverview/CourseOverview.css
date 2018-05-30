@@ -14,10 +14,34 @@
     border-radius: 40px;
     background-color: #4bc361ef;
     padding: 20px;
-    width: 50%;
+    width: 40%;
+    border: 2px solid #4bc361ef;
+    
   }
-  
-  
+
+  #formm {
+    
+  }
+
+  #input-part {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    
+  }
+
+  #input-part::placeholder {
+    color: white!important;
+  }
+
+  .search-btn {
+    background-color: transparent;
+    width: 20%;
+
+  }
+
   #catalog-btn {
     border-radius: 50px;
     height: 100px;
@@ -39,10 +63,10 @@
     position: relative;
     top: 0;
     margin: -100px 0px -10px 0px;
-    background:linear-gradient(#28423e, 
-    #4bc362);
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
   }
-  
+
   /* #color-bar {
     width: 100%;
     height: 22px;
@@ -85,3 +109,6 @@
     color: #426d67;
   }
   
+.course-title {
+  color: currentColor;
+}

@@ -11,43 +11,40 @@ import NavBar from "./components/NavBar";
 import CourseCreatorInterface from "./components/CourseCreatorInterface";
 import CourseCreator from "./pages/CourseCreator";
 import OurTeam from "./pages/OurTeam";
-import Contact from "./pages/ContactUs";
+import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
-<<<<<<< HEAD
-import Form from "./pages/ContactUs/Form";
-=======
+import ViewCourses from "./pages/ViewCourses";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
-import LessonCreation from "./components/LessonCreation";
->>>>>>> c8d848848cd0dd6257eab88bfebef7161720fe74
+import GetInvolved from "./pages/GetInvolved";
 
-const renderNavButtons = () => {
-  let path = window.location.pathname;
-  switch(path) {
-    case "/":
-    case "/home":
-      return (
-        <button>DYNAMIC</button>
-      );
-      break;
-    case "/login":
-      return (
-        <button>blarg</button>
-      );
-      break;
-    case "/course-creator":
-      // render different buttons on the navbar
-      return (
-        <button>DYNAMIC</button>
-      );
-      break;
-    default:
-      return (
-        <button>You suck LIKE A LOT!!!!</button>
-      )
-      break;
-  }
-};
+// const renderNavButtons = () => {
+//   let path = window.location.pathname;
+//   switch(path) {
+//     case "/":
+//     case "/home":
+//       return (
+//         <button>DYNAMIC</button>
+//       );
+//       break;
+//     case "/login":
+//       return (
+//         <button>blarg</button>
+//       );
+//       break;
+//     case "/course-creator":
+//       // render different buttons on the navbar
+//       return (
+//         <button>DYNAMIC</button>
+//       );
+//       break;
+//     default:
+//       return (
+//         <button>You suck LIKE A LOT!!!!</button>
+//       )
+//       break;
+//   }
+// };
 
 const App = (props) => (
   <Router>
@@ -63,7 +60,9 @@ const App = (props) => (
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route exact path="/our-team" component={OurTeam} />
+          <Route exact path="/view-course" component={ViewCourses} />
           <Route exact path="/contact-us" component={Form} />
+          <Route exact path="/get-involved" component={GetInvolved} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />

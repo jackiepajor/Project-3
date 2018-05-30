@@ -1,0 +1,10 @@
+.list-container {
+    background-color: transparent;
+    border: none;
+    color: rgb(65, 65, 65);
+}
+
+.list-li {
+    border: 1px solid grey;
+    margin: 2px;
+}

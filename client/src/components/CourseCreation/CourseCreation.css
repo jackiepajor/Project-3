@@ -1,41 +1,39 @@
-
 .main-content {
-    width: 100%;
-    margin-bottom: -250px;
-    position: relative;
-    top: 0;
-    margin-top: -100px;
-    background:linear-gradient(#28423e, 
-    #4bc362);
-  }
-  
-  .jumbotron {
+   padding: 20px 50px 20px 0px;
+
+}
+
+#page {
     background-color: rgba(255, 255, 255, 0.603);
     width: 75%;
     margin: auto;
-    margin-top: 80px;
-    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 200px;
     border-radius: 25px;
-  }
-  
-  .btn-course {
-    width: 200px;
-    border-radius: 50px;
-  }
-  
-  .btn-hopper {
-    border-radius: 25px;
-    height: 50px;
-    background-color: #4bc361ef;
+}
+
+.creator-btn {
+    color: white!important;
+}
+
+.react-link {
+    color:white;
+    text-decoration: none!important;
+}
+
+.react-link:hover {
+    text-decoration: none!important;
     color: white;
-    font-weight: bold;
-  }
-  
-  .btn-hopper:hover {
-    color:rgba(255, 255, 255, 0.959);
-    background-color: #3a8d4a;
-  }
-  
-  #category-dropdown {
-    height: 50px;
-  }
+}
+
+.h5-txt {
+    color: rgb(65, 65, 65);
+}
+
+.unit-name {
+    font-size: 25px;
+}
+
+.lesson-name {
+    float: right;
+}

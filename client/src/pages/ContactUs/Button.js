@@ -42,7 +42,7 @@ class Button extends Component {
 
 render() {
     return (
-        <button
+        <button className="btn btn-hopper"
          disabled={this.state.isClicked}
          onClick={this.logFormDataToConsole}>
          Submit

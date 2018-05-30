@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Field from "../../pages/ContactUs/Field.js";
 import Button from "../../pages/ContactUs/Button.js";
+import "./ContactUs.css";
 
 
 class Form extends Component {
@@ -26,30 +27,37 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
-        {/* Name field */}
-        <Field
-        label="Name"
-        onChange={(event) => this.updateField('name', event.target.value)} 
-        value={this.state.name} />
+      <div id="content">
+        <br /> <br /> <br /> <br /> <br />
+        <div className="container" id="jumbo-field">
+          {/* Name field */}
+          <Field
+          className="input"
+          label="Name"
+          onChange={(event) => this.updateField('name', event.target.value)} 
+          value={this.state.name} />
 
-        {/* Email field */}
-        <Field
-        label="Email" 
-        onChange={(event) => this.updateField('email', event.target.value)} 
-        value={this.state.email} />
+          {/* Email field */}
+          <Field
+          className="input"
+          label="Email" 
+          onChange={(event) => this.updateField('email', event.target.value)} 
+          value={this.state.email} />
 
-        {/* Message field */}
-        <Field 
-        label="Message"
-        onChange={(event) => this.updateField('message', event.target.value)} 
-        textarea ={true}
-        value={this.state.message} />
+          {/* Message field */}
+          <Field 
+          className="input"
+          label="Message"
+          onChange={(event) => this.updateField('message', event.target.value)} 
+          textarea ={true}
+          value={this.state.message} />
 
-        {/* Submit button */}
-        <Button 
-        email="jpajor@grad.bryant.edu"
-        formValues={this.state} />
+          {/* Submit button */}
+          <Button 
+          email="jpajor@grad.bryant.edu"
+          formValues={this.state} />
+        </div>
+        <br /> <br /> <br />
       </div>
     );
   }

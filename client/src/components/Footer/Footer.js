@@ -10,14 +10,15 @@ const Footer = props => (
                             <h6 className="mb-0 white-txt" id="get-connected">Stay connected with us on social!</h6>
                         </div>
                         <div className="col-md-6 text-md-right" id="social">
-                            <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-                            <a className="footer-link" href=""><i className="fa fa-facebook"></i></a>
-                            <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-                            <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
-                            <a className="footer-link" href=""><i className="fa fa-instagram"></i></a>
+                            <a className="footer-link" href=""><i className="fa fa-github icon-style"></i></a>
+                            <a className="footer-link" href=""><i className="fa fa-facebook icon-style"></i></a>
+                            <a className="footer-link" href=""><i className="fa fa-twitter icon-style"></i></a>
+                            <a className="footer-link" href=""><i className="fa fa-linkedin icon-style"></i></a>
+                            <a className="footer-link" href=""><i className="fa fa-instagram icon-style"></i></a>
                         </div>
                     </div>      
                 </div>
+                <div id="green-line"></div>
     
                 <div className="container" id="lower-footer">
     
@@ -35,7 +36,7 @@ const Footer = props => (
                             </h6>
                             <hr className="underline mb-4 mt-0 d-inline-block mx-auto" /> 
                             <p className="footer-txt">
-                                <a href="" className="footer-link">Our Team</a>
+                                <a href="/our-team" className="footer-link">Our Team</a>
                             </p> 
                             <p className="footer-txt">
                                 <a href="" className="footer-link">Blog</a>
@@ -62,7 +63,7 @@ const Footer = props => (
                                 <a href="" className="footer-link">Get Involved</a>    
                             </p> 
                             <p className="footer-txt">
-                                <a href="" className="footer-link">Contact</a>
+                                <a href="contact-us" className="footer-link">Contact</a>
                             </p>  
                         </div>
                     </div>
@@ -73,7 +74,7 @@ const Footer = props => (
     
                 <div className="py-3 text-center" id="footer-copyright">
                     © 2018 Copyright:
-                    <a href="" className="footer-link">
+                    <a href="/" className="footer-link">
                         <strong> Grasshopper.com</strong>
                     </a>
                 </div>

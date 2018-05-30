@@ -1,12 +1,12 @@
 
 .main-content {
-    height: 1000px;
+    height: 100%;
     width: 100%;
     position: relative;
     top: 0;
     margin-top: -100px;
-    background:linear-gradient(#28423e, 
-    #4bc362);
+    /* background:linear-gradient(#28423e, 
+    #4bc362); */
   }
   
   .jumbotron {
@@ -35,4 +35,19 @@
     color:rgba(255, 255, 255, 0.959);
     background-color: #3a8d4a;
   }
- 
+
+  .bottom-btns {
+    margin: 0px 10px 0px 10px;
+  }
+
+  .file {
+    height: 50px;
+  }
+
+  #file-upload {
+    display: block;
+  }
+
+  #edit-container {
+    display: block;
+  }
