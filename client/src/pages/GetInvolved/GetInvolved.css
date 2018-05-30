@@ -19,14 +19,15 @@
     font-size: 50px;
 }
 
-.underline-header {
-   border-bottom: 2px solid #4bc362;
-   padding-bottom: 2px;
+.underline-header:hover {
+    border-bottom: 2px solid #4bc362;
+    padding-bottom: 2px;
 }
 
 
 #react-img {
     height: 200px;
+    
 }
 
 #bootstrap-img {

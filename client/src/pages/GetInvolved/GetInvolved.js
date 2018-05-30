@@ -25,7 +25,7 @@ class GetInvolved extends Component {
                     <div className="col-lg-12">
                         <h2 className="white-txt display-2 "><strong className="underline-header">Technologies</strong></h2>
                     </div>
-                </div> <br /> <br />
+                </div> <br /> <br /> <br /> <br />
                 <div className="row">
                     <div className="col-lg-4">
                         <img id="react-img" alt="React" src={require("./react.png")} />
@@ -37,12 +37,12 @@ class GetInvolved extends Component {
                         <img id="mongodb-img" alt="MongoDB" src={require("./mongodb.png")} />
                     </div>
                 </div>
-                <br /> <br />
+                <br /> <br /> <br />
                 <div className="row">
                     <div className="col-lg-12">
                         <h2 className="white-txt display-2 text-right"><strong className="underline-header">Languages</strong></h2>
                     </div>
-                </div> <br /> <br />
+                </div> <br /> <br /> <br /> <br />
                 <div className="row">
                     <div className="col-lg-4">
                         <img id="html-img" alt="HTML" src={require("./html.png")} />
