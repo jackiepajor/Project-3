@@ -6,9 +6,11 @@ let routeParams = {};
 
 const addLesson = (props) => {
   const newLesson = {};
-  newLesson.title = document.getElementById("lesson-title").innerText;
-  newLesson.description = document.getElementById("lesson-description").innerText;
-  props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
+  newLesson.title = document.getElementById("lesson-title").value;
+  newLesson.description = document.getElementById("lesson-description").value;
+  if (newLesson.title !== '' && newLesson.description !== '') {
+    props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
+  }
 };
 
 const parseParams = (location) => {
@@ -35,12 +37,12 @@ const LessonCreation = props => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h4 className="display-3" id="lesson-title" contentEditable="true">Add Lesson Title...</h4>
+              <input type="text" className="display-7" id="lesson-title" contentEditable="true" placeholder="Add Lesson Title..."></input>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <p id="lesson-description" contentEditable="true">Add Description...</p>
+              <input type="text" className="display-3" id="lesson-description" contentEditable="true" placeholder="Add Description..."></input>
             </div>
           </div>
         </div>
