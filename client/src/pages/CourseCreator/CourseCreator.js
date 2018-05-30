@@ -53,6 +53,11 @@ class CourseCreator extends Component {
     }
   };
 
+  handleLessonChange(value) {
+    let s = "";
+    this.setState({ lessonText: value })
+  }
+
   handleAddCourse(course) {
     try {
       this.setState({ "course": course });
@@ -88,7 +93,7 @@ class CourseCreator extends Component {
           <Switch>
             <Route exact path="/course-creator/:action/course" component={() => <NewCourse location={this.props.location} handleAddCourse={this.handleAddCourse.bind(this)} categories={this.state.categories} course={this.state.course}/>} />
             <Route exact path="/course-creator/:action/course/:course_id" component={() => <CourseCreation location={this.props.location} handleAddUnit={this.handleAddUnit.bind(this)} course={this.state.course} />} />
-            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson" component={() => <LessonCreation location={this.props.location} handleAddLesson={this.handleAddLesson.bind(this)} />} />
+            <Route exact path="/course-creator/:action/course/:course_id/unit/:unit_id/lesson" component={() => <LessonCreation location={this.props.location} handleAddLesson={(course_id, unit_id, newLesson) => this.handleAddLesson(course_id, unit_id, newLesson)} />} />
             <Redirect to="/" />
           </Switch>
         </div>

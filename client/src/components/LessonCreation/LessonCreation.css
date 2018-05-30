@@ -43,3 +43,11 @@
   .file {
     height: 50px;
   }
+
+  #file-upload {
+    display: block;
+  }
+
+  #edit-container {
+    display: block;
+  }

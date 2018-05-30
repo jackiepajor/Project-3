@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, matchPath, withRouter } from "react-router-dom";
+import ReactQuill from 'react-quill';
+import Editor from '../Editor/Editor';
 import "./LessonCreation.css";
+import 'react-quill/dist/quill.snow.css';
 
 let routeParams = {};
 
@@ -8,6 +11,9 @@ const addLesson = (props) => {
   const newLesson = {};
   newLesson.title = document.getElementById("lesson-title").innerText;
   newLesson.description = document.getElementById("lesson-description").innerText;
+  
+  let editorText = document.getElementsByClassName('ql-editor')[0].innerHTML;
+  newLesson.body = editorText;
   props.handleAddLesson(routeParams.course_id, routeParams.unit_id, newLesson);
 };
 
@@ -26,8 +32,6 @@ const LessonCreation = props => {
     
       <div className="container white-txt">
         <h3 className="display-3"><strong>Lesson Creator</strong></h3>
-        <hr />
-        <blockquote><strong>How to </strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere temporibus mollitia eos ipsa dolore amet laboriosam distinctio. Non quidem tenetur a, rem aperiam exercitationem laborum ratione illum atque? Tempora mollitia ratione recusandae quo explicabo officiis dolores deleniti natus sunt aspernatur.</blockquote>
         <hr />
       </div>
 
@@ -48,14 +52,11 @@ const LessonCreation = props => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                      <button className="btn btn-hopper" type="button">Add</button>
-                  </div>
-                  <div className="custom-file" id="file-upload">
-                      <input type="file" className="custom-file-input"  />
-                      <label className="custom-file-label" for="inputGroupFile03">Choose file</label>
-                  </div>
+              <div id="edit-container">
+                    <Editor 
+                    placeholder="Start Creating Your Lesson Here..." 
+                    value={props.lessonText}
+                    onChange={(value) => props.handleLessonChange(value)}/>
               </div>
             </div>
           </div>
