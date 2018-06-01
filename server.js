@@ -10,7 +10,7 @@ const favicon = require("serve-favicon");
 
 mongoose.Promise = require("bluebird");
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://grasshopper:grasshopper1@ds121599.mlab.com:21599/heroku_9lpz081d", { promiseLibrary: require("bluebird") })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://grasshopper:grasshopper1@ds245150.mlab.com:45150/heroku_1sf78q9l", { promiseLibrary: require("bluebird") })
   .then(() => console.log("Connection successful"))
   .catch((err) => console.log(err));
 
