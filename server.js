@@ -37,18 +37,7 @@ app.use('/api/course/:course_id/unit', unit);
 app.use('/api/course/:course_id/unit/:unit_id/lesson', lesson);
 app.use('/api/category', category);
 
-app.use(function(req, res, next) {
-  var err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
 
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-
-  res.sendStatus(err.status || 500);
-});
 
 app.get("*", (req, res) => {  
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
