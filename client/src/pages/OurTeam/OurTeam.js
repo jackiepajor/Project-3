@@ -24,52 +24,52 @@ class OurTeam extends Component {
           {/* Ethan */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">George Greene</h3>
+              <h5>Full-Stack Developer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github "></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
           {/* Garvey */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Garvey Jackson</h3>
+              <h5>React Expert</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
           {/* George */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Kurtis Carpenter</h3>
+              <h5>Digital Marketer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
           {/* Elena */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Elena Guedes</h3>
+              <h5>Back-End Developer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon" ></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
@@ -77,13 +77,13 @@ class OurTeam extends Component {
           {/* Jesse */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Jesse Springer</h3>
+              <h5>Back-End Developer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
@@ -91,13 +91,13 @@ class OurTeam extends Component {
           {/* Jacyln */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Jaclyn Pajor</h3>
+              <h5>Busines Analyst</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 
@@ -105,13 +105,13 @@ class OurTeam extends Component {
           {/* Kurist */}
           <div className="row profile">
             <div className="col-lg-6 white-txt text-center">
-              <h3 className="">John Doe</h3>
-              <h5>Developer</h5>
+              <h3 className="">Ethan Rogers</h3>
+              <h5>UI/UX Designer</h5>
             </div>
             <div className="col-lg-6 text-center"><br />
-              <a className="footer-link" href=""><i className="fa fa-github"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-twitter"></i></a>
-              <a className="footer-link" href=""><i className="fa fa-linkedin"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-github team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-twitter team-icon"></i></a>
+              <a className="footer-link" href=""><i className="fa fa-linkedin team-icon"></i></a>
             </div>
           </div>
 

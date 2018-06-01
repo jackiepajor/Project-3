@@ -44,6 +44,48 @@
     height: 50px;
   }
 
+  #lesson-title {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    color: currentColor
+  }
+
+  #lesson-title:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #lesson-title::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  #lesson-description {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: currentColor
+  }
+
+  #lesson-description:focus {
+    text-decoration: none;
+    border: none;
+  }
+
+  #lesson-description::placeholder {
+    text-align: center;
+    color: currentColor;
+  }
+
+  input:focus::-webkit-input-placeholder { color:transparent !important; } 
+  input:focus:-moz-placeholder { color:transparent !important; } /* Firefox 18- */
+  input:focus::-moz-placeholder { color:transparent !important; } /* Firefox 19+ */
+  input:focus:-ms-input-placeholder { color:transparent !important; } /* oldIE ;) */
   #file-upload {
     display: block;
   }

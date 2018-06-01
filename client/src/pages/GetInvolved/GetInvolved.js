@@ -19,14 +19,14 @@ class GetInvolved extends Component {
                     </div>
                 </div>
                 <br /> <br />
-                <hr />
+               
                 <br /> <br />
                 <div className="row">
                     <div className="col-lg-12">
                         <h2 className="white-txt display-2 "><strong className="underline-header">Technologies</strong></h2>
                     </div>
                 </div> <br /> <br /> <br /> <br />
-                <div className="row">
+                <div className="row text-center">
                     <div className="col-lg-4">
                         <img id="react-img" alt="React" src={require("./react.png")} />
                     </div>
@@ -43,7 +43,7 @@ class GetInvolved extends Component {
                         <h2 className="white-txt display-2 text-right"><strong className="underline-header">Languages</strong></h2>
                     </div>
                 </div> <br /> <br /> <br /> <br />
-                <div className="row">
+                <div className="row text-center">
                     <div className="col-lg-4">
                         <img id="html-img" alt="HTML" src={require("./html.png")} />
                     </div>

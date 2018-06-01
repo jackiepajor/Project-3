@@ -48,7 +48,7 @@ const Footer = props => (
                             </h6>
                             <hr className="underline mb-4 mt-0 d-inline-block mx-auto" /> 
                             <p className="footer-txt">
-                                <a href="" className="footer-link">Privacy Policy</a>
+                                <a href="/privacy" className="footer-link">Privacy Policy</a>
                             </p> 
                             <p className="footer-txt">
                                 <a href="" className="footer-link">Terms of Use</a>
@@ -60,7 +60,7 @@ const Footer = props => (
                             </h6>
                             <hr className="underline mb-4 mt-0 d-inline-block mx-auto" />  
                             <p className="footer-txt">
-                                <a href="" className="footer-link">Get Involved</a>    
+                                <a href="/get-involved" className="footer-link">Get Involved</a>    
                             </p> 
                             <p className="footer-txt">
                                 <a href="contact-us" className="footer-link">Contact</a>
