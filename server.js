@@ -9,6 +9,7 @@ const logger = require("morgan");
 const favicon = require("serve-favicon");
 
 mongoose.Promise = require("bluebird");
+
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://grasshopper:grasshopper1@ds245150.mlab.com:45150/heroku_1sf78q9l", { promiseLibrary: require("bluebird") })
   .then(() => console.log("Connection successful"))
@@ -17,13 +18,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://grasshopper:grasshopper1@
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 // Serve up static assets
 app.use(express.static(path.join(__dirname, "client", "build")))
-// Add routes, both API and view
-// app.use(routes);
 
 app.use(logger("dev"));
 
+// Add routes, both API and view
 const auth = require("./routes/auth/auth");
 const course = require("./routes/api/course");
 const unit = require("./routes/api/unit");
