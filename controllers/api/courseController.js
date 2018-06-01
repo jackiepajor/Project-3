@@ -2,7 +2,6 @@ const passport = require("passport");
 const settings = require("../../config/settings");
 require("../../config/passport")(passport);
 const jwt = require("jsonwebtoken");
-const Course = require("../../models/Course");
 const db = require("../../models");
 
 module.exports = {
@@ -90,7 +89,7 @@ module.exports = {
     // if (req.headers.jwttoken) {
       db.Course.findOneAndRemove({ _id: req.params.course_id })
         .then(function(dbCourse) {
-          db.Users.find({},
+          db.User.find({},
             { 
               $pull: { enrolledcourses: { _id: req.params.course_id } },
               $pull: { managedcourses: { _id: req.params.course_id } }

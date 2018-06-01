@@ -2,7 +2,7 @@ const passport = require("passport");
 const settings = require("../../config/settings");
 require("../../config/passport")(passport);
 const jwt = require("jsonwebtoken");
-const User = require("../../models/user");
+const User = require("../../models/User");
 
 module.exports = {
   register: function(req, res) {
