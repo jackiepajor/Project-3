@@ -22,7 +22,7 @@ module.exports = {
   },
   createUnit: function(req, res) {
     // if (req.headers.jwttoken) {
-      let newUnit = new Unit({
+      let newUnit = new db.Unit({
         name: req.body.name,
         author: req.body.author,
         category: req.body.category,

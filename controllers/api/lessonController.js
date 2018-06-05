@@ -21,7 +21,7 @@ module.exports = {
   },
   createLesson: function(req, res) {
     // if (req.headers.jwttoken) {
-      let newLesson = new Lesson({
+      let newLesson = new db.Lesson({
         title: req.body.title,
         images: req.body.images,
         videos: req.body.videos,
