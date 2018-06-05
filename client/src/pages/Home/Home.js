@@ -55,7 +55,46 @@ class Home extends Component {
             
 
           </div>
+          <div className="container" id="third-section">
 
+          <div className="row">
+            <div className="col-xl-12 text-center">
+              <h3 id="be">BE APART OF SOMETHING BIGGER</h3>
+            </div>
+          </div>
+          
+          <div className="row" id="third-row">
+            <div className="col-md-4 third-col">
+              <strong className="tr-strong">Find courses you need</strong>
+              <p className="tr-p">
+                We offer a wide collection of online courses to provide users
+                with a variety of knowledge waiting for them at their fingertips.
+              </p>
+            </div>
+            <div className="col-md-4 third-col">
+              <strong className="tr-strong">Build courses you want</strong>
+              <p className="tr-p">
+                We have a user-friendly course builder that makes sharing your
+                knowledge a breeze.
+              </p>
+            </div>
+            <div className="col-md-4 third-col">
+              <strong className="tr-strong">Belong to a community</strong>
+              <p className="tr-p">
+                We have built a community of like-minded, motivated individuals
+                that understand the importance of always learning.
+              </p>
+            </div>
+          </div>
+          <div className="row text-center">
+            <div className="col-lg-12">
+              <button className="btn btn-hopper" id="more-dets-btn">More Details</button>
+            </div>
+          </div>
+
+          </div>
+
+        
 
         </div>
 
