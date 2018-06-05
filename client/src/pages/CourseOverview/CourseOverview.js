@@ -14,24 +14,33 @@ class CourseOverview extends Component {
       <div>
         <div className="catalog-content">
           <div className="container outer-box">
-            <div id="catalog-header">
-              <div className="container text-center" id="catalog-header-space">
-                <div className="row">
-                  <div className="col-lg-12">
-                    {/* <button class="btn text-uppercase" id="catalog-btn">Create a course</button> */}
-                    <div id="catalog-search">
-                      <form className="ml-auto" id="formm">
+          <div id="catalog-header">
+          <div className="container text-center" id="catalog-header-space">
+            <div className="row">
+              <div className="col-lg-12">               
+                <div id="catalog-search">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <button className="btn search-btn" id="search-icon"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-lg-10">
+                      <form className="ml-auto" id="formm"> 
                         <div className="md-form mt-0">
                           <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="input-part" />
-                          {/* <button className="btn search-btn"><i class="fa fa-search" aria-hidden="true"></i></button> */}
                         </div>
                       </form>
                     </div>
+                    
                   </div>
                 </div>
-                
+                  
+                </div>
               </div>
+              
             </div>
+          </div>
+          </div>
             <div className="container topic-box">
               <div className="row">
                 <div className="container category-title">
