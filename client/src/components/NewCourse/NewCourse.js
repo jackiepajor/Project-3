@@ -62,9 +62,6 @@ class NewCourse extends React.Component {
 
         <div className="container white-txt text-center">
           <h3 className="display-1"><strong>Create Course</strong></h3>
-          {/* <hr />
-          <blockquote><strong>How to: </strong>Provide a course name, description, and a list of requirements.</blockquote>
-          <hr /> */}
         </div>
 
         <div className="jumbotron jumbotron-fluid">
@@ -72,7 +69,6 @@ class NewCourse extends React.Component {
             <div className="row">
               <div className="col-lg-12">
                 <input type="text" id="course-title" class="form-control" placeholder="Add Course Title..." />
-                {/* <h4 id="course-title" className="display-3" contentEditable="true" onClick={(e) => e.target.innerHtml = ""} >Add Course Title...</h4> */}
               </div>
             </div>
             <div className="row">
@@ -93,7 +89,7 @@ class NewCourse extends React.Component {
                     <option selected>Course Category</option>
                     {
                       this.props.categories ? this.props.categories.map(category => {
-                        return <option value={category._id}>{category.title}</option>;
+                        return <option key={category._id} value={category._id}>{category.title}</option>;
                       })
                         : null
                     }

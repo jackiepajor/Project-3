@@ -27,7 +27,7 @@ module.exports = {
   },
   createCourse: function(req, res) {
     // if (req.headers.jwttoken) {
-      let newCourse = new Course({
+      let newCourse = new db.Course({
         title: req.body.title,
         topic: req.body.topic,
         synopsis: req.body.synopsis,

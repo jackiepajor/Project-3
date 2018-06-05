@@ -5,7 +5,7 @@ const Category = require("../models/Category.js");
 const seeder = require('mongoose-seed');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb://localhost/grasshopper', function () {
+seeder.connect('mongodb://grasshopper:grasshopper1@ds245150.mlab.com:45150/heroku_1sf78q9l', function () {
     // Load Mongoose models
     seeder.loadModels([
         '../models/Category.js',
