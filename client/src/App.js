@@ -14,11 +14,11 @@ import OurTeam from "./pages/OurTeam";
 import Form from "./pages/ContactUs";
 import NoMatch from "./pages/NoMatch";
 import ViewCourses from "./pages/ViewCourses";
+import CourseViewer from "./pages/CourseViewer";
 import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
 import GetInvolved from "./pages/GetInvolved";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-
 
 // const renderNavButtons = () => {
 //   let path = window.location.pathname;
@@ -62,7 +62,7 @@ const App = (props) => (
           <Route exact path="/manage-course" component={ManageCourse} />
           <Route exact path="/my-courses" component={MyCourses} />
           <Route exact path="/our-team" component={OurTeam} />
-          <Route exact path="/view-course" component={ViewCourses} />
+          <Route exact path="/course-viewer/:course_id" component={CourseViewer} />
           <Route exact path="/contact-us" component={Form} />
           <Route exact path="/get-involved" component={GetInvolved} />
           <Route exact path="/privacy" component={PrivacyPolicy} />
