@@ -28,7 +28,6 @@ class NavBar extends Component {
                   <a className="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                   <div className="dropdown-menu" aria-labelledby="dropdown09" id="dropdown">
                     <a className="dropdown-item" href="/my-courses">My Courses</a>
-                    <a className="dropdown-item" href="">Settings</a>
                     <a className="dropdown-item" href="" onClick={this.logout}>Log Out</a>
                   </div>
                 </li>

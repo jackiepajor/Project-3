@@ -14,14 +14,11 @@
     border-radius: 40px;
     background-color: #4bc361ef;
     padding: 20px;
-    width: 40%;
+    width: 30%;
     border: 2px solid #4bc361ef;
     
   }
 
-  #formm {
-    
-  }
 
   #input-part {
     background-color: transparent;
@@ -29,11 +26,16 @@
     border-radius: 0;
     border-bottom: 1px solid white;
     color: white;
+    width: 120%;
+    position: relative;
+    left: -20%;
+    padding-left: 50px;
     
   }
 
   #input-part::placeholder {
     color: white!important;
+    font-size: 20px;
   }
 
   .search-btn {
@@ -111,4 +113,11 @@
   
 .course-title {
   color: currentColor;
+}
+
+#search-icon {
+  color: white;
+  padding: none;
+  margin: none;
+  font-size: 16px;
 }

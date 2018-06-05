@@ -1,49 +1,61 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../../components/Grid";
 import "./Home.css";
-import axios from 'axios';
 
 class Home extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      courses: []
-    };
-  }
+  state = {
+
+  };
 
   componentDidMount() {
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-    if (axios.defaults.headers.common['Authorization'] === null) {
-      this.props.history.push("/login");
-    }
-    // axios.get('/api/course')
-    //   .then(res => {
-    //     this.setState({ courses: res.data });
-    //     console.log(this.state.courses);
-    //   })
-    //   .catch((error) => {
-    //     if(error.response.status === 401) {
-    //       this.props.history.push("/login");
-    //     }
-    //   });
-  }
-
-  // Logout function can be called somewhere...
-  logout = () => {
-    localStorage.removeItem('jwtToken');
-    window.location.reload();
   }
 
   render() {
     return (
       <div>
+
         <div className="jumbotron jumbotron-fluid" id="main-jumbo">
-          
+          <h1 className="display-2" id="header-title"><strong>Lifelong Learning</strong></h1>
         </div>
-        <div className="container">
+        <div id="home-break"></div>
+        <div className="container" id="home-content">
+
+          <div className="row" id="home-first-section">
+            <div className="col-xl-12 text-center">
+                <h3>Learn to be your own teacher</h3>
+                <h6 id="home-h6">Join the other 10,000+ students who are learning through teaching.</h6>
+            </div>
+          </div>
+
+          <div className="row" id="learn-row">
           
+            
+            <div className="col-xl-6" id="home-learn-section">
+       
+            </div>
+
+            <div className="col-xl-6">
+              <h3 className="home-title-2 display-4" id="find">Find what you need to learn</h3>
+            </div>
+
+          </div>
+
+          <div className="row" id="teach-row">
+
+            <div className="col-xl-6 " >
+              <h3 className="home-title-2 display-4 text-right" id="share">Share what you already know</h3>
+            </div>
+          
+            <div className="col-xl-6" id="home-teach-section">
+        
+            </div>
+            
+
+          </div>
+
+
         </div>
+
       </div>
     );
   }
