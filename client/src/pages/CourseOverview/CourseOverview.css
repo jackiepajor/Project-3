@@ -112,3 +112,16 @@
 .course-title {
   color: currentColor;
 }
+
+.course-view-link {
+  color: currentColor;
+}
+
+.course-view-link:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.course-view {
+  cursor: pointer;
+}

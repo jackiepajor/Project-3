@@ -8,49 +8,22 @@ import "./CourseViewer.css";
 
 class CourseOverview extends Component {
   state = {
-    course: {
-      _id:"course1",
-      title: "course title",
-      synopsis: "this is the description",
-      author: "Suq Madiq",
-      requirements: ["pen", "pad", "persistence"],
-      units: [
-        {
-          _id: "u1",
-          name: "unit 1",
-          lessons: [
-            {
-              _id: "u1L1_id",
-              title: "u1L1",
-              body: "<p>u1L1 body text</p>"
-            },
-            {
-              _id: "u1L2_id",
-              title: "u1L2",
-              body: "<p>u1L2 body text</p>"
-            }
-          ]
-        },
-        {
-          _id: "u2",
-          name: "unit 2",
-          lessons: [
-            {
-              _id: "u2L1_id",
-              title: "u2L1",
-              body: "<p>u2L1 body text</p>"
-            },
-            {
-              _id: "u2L2_id",
-              title: "u2L2",
-              body: "<p>u2L2 body text</p>"
-            }
-          ]
-        }
-      ]
-    },
-    current_unit: "",
-    current_lesson: ""
+    course: {title: "title"}
+  };
+
+  componentWillMount() {
+    const courseId = this.props.match.params.course_id;
+    this.loadCourse(courseId);
+  }
+
+
+  loadCourse(courseId) {
+    let self = this;
+    API.getCourse(courseId)
+      .then(res => {
+        self.setState( {course: res.data} );
+      })
+      .catch(err => console.log(err));
   };
 
   componentDidMount() {

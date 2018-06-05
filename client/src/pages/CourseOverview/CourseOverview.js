@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
+import { Link } from 'react-router-dom'
 import { Container, Row, Col } from "../../components/Grid";
 import "./CourseOverview.css";
 
@@ -350,7 +351,7 @@ class CourseOverview extends Component {
                         <div className="row">
                           <div className="col-sm-12 course-img">
                             <h5 className="course-title"><strong>Professional Photography Crashcourse</strong></h5>
-                            <p>How to Take & Sell Photos for Beginners & Advanced Photographers</p>
+                            <p>How to Take & Sell Photos for Beginners & Pros</p>
                           </div>
                         </div>
                       </div>
@@ -439,6 +440,69 @@ class CourseOverview extends Component {
                 </div>
               </div>
             </div>
+            <hr/>
+
+           <div className="container topic-box">
+              <div className="row">
+                <div className="container category-title">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <h4 className="white-txt">Household Education</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="container" id="courses-box">
+                  <div className="row">
+                    <div className="col-lg-3">
+                      <div className="container course-view">
+                        <div className="row">
+                          <div className="col-sm-12 course-img">
+                            <h5 className="course-title"><strong>How to vacume</strong></h5>
+                            <p>The secrets to finding the robotic vacuum to fit your personality</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="container course-view">
+                        <div className="row">
+                          <div className="col-sm-12 course-img">
+                            <h5 className="course-title"><strong>How to spell vacuum correctly.</strong></h5>
+                            <p>Learn how to spell vacuum... 10 reasons why it's harder than you think.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-3">
+                      <Link to="/" className="course-view-link">
+                      <div className="container course-view">
+                        <div className="row">
+                          <div className="col-sm-12 course-img">
+                            <h5 className="course-title"><strong>Washing Dishes</strong></h5>
+                            <p>Learn the tightly held secrets that have been eluding you!</p>
+
+                          </div>
+                        </div>
+                      </div>
+                      </Link>
+                    </div>
+                    <div className="col-lg-3">
+                      <div className="container course-view">
+                        <div className="row">
+                          <div className="col-sm-12 course-img">
+                            <h5 className="course-title"><strong>How to make yourself clean.</strong></h5>
+                            <p>We hate it too. Learn how to hate it less... C'mon. Don't be like that.</p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
