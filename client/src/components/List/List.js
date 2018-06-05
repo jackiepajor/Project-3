@@ -6,6 +6,7 @@ export const List = ({ children }) => {
     <div className="list-container">
       <ul className="inner-list">
         {children}
+     
       </ul>
     </div>
   );

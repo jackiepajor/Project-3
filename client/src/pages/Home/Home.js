@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../../components/Grid";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends Component {
@@ -24,8 +25,10 @@ class Home extends Component {
             <div className="col-xl-12 text-center">
                 <h3>Learn to be your own teacher</h3>
                 <h6 id="home-h6">Join the other 10,000+ students who are learning through teaching.</h6>
+                <Link to="/course-creator/create/course"><button className="btn btn-nav" id="home-new-btn">Create A Course</button></Link>
             </div>
           </div>
+       
 
           <div className="row" id="learn-row">
           

@@ -31,8 +31,8 @@ const LessonCreation = props => {
       <br /><br /><br /><br /><br /><br />
     
       <div className="container white-txt">
-        <h3 className="display-3"><strong>Lesson Creator</strong></h3>
-        <hr />
+        <h3 className="display-3 text-center"><strong>Lesson Creator</strong></h3>
+
       </div>
 
       <div className="jumbotron jumbotron-fluid">

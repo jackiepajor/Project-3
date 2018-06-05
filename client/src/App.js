@@ -19,6 +19,7 @@ import CourseCreation from "./components/CourseCreation";
 import UnitCreation from "./components/UnitCreation";
 import GetInvolved from "./pages/GetInvolved";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 // const renderNavButtons = () => {
 //   let path = window.location.pathname;
@@ -66,6 +67,7 @@ const App = (props) => (
           <Route exact path="/contact-us" component={Form} />
           <Route exact path="/get-involved" component={GetInvolved} />
           <Route exact path="/privacy" component={PrivacyPolicy} />
+          <Route exact path="/terms" component={Terms} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />

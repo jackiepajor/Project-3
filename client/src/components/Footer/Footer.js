@@ -51,7 +51,7 @@ const Footer = props => (
                                 <a href="/privacy" className="footer-link">Privacy Policy</a>
                             </p> 
                             <p className="footer-txt">
-                                <a href="" className="footer-link">Terms of Use</a>
+                                <a href="/terms" className="footer-link">Terms of Use</a>
                             </p>   
                         </div>
                         <div className="col-lg-3">
