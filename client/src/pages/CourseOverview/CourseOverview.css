@@ -123,4 +123,17 @@
   padding: none;
   margin: none;
   font-size: 16px;
+
+}
+.course-view-link {
+  color: currentColor;
+}
+
+.course-view-link:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.course-view {
+  cursor: pointer;
 }
